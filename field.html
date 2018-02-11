@@ -1,0 +1,73 @@
+<!DOCTYPE>
+<html lang='en'>
+	<head>
+		<title></title>
+		<meta charset='utf-8'>
+		<link rel="stylesheet" type="text/css" href="styles/stylesheet.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	</head>
+	<body>
+		<div id="content">
+			<div id="video">
+				<img src="media/nike.png">
+			</div>
+			<div id="keys">
+				<div class="key" style="background:yellow;">
+					<a href="#">Nike</a>
+				</div>
+				<div class="key" style="background:orange;">
+					<a href="#">Toyota</a>
+				</div>
+				<div class="key" style="background:pink;">
+					<a href="#">Guinness</a>
+				</div>
+				<div class="key" style="background:lightblue;">
+					<a href="#">Auidi</a>
+				</div>
+			</div>
+			<div id="team">
+				<div class="team-member" style="display:inline-block;">
+					<img class="mugshot" src="media/fela-kuti.jpg">
+					<h2>Rodney</h2>
+					<p>Rodney applies his amazing cross county skills in oder to win the race.</p>
+				</div>
+				<div class="team-member">
+					<img class="mugshot" src="media/jimi-hendrix.jpg">
+					<h2>Jackals</h2>
+					<p>Jackals can accelerate to top speed within 12 seconds. Jackals was designed to beat anyone at a sprint.</p>
+				</div>
+				<div class="team-member">
+					<img class="mugshot" src="media/jim-morrison.jpg">
+					<h2>Douglas</h2>
+					<p>Douglass launches himself into orbit at the breath of a butterfly. He was born to fly and no one will stop him from doing so.</p>
+				</div>
+			</div>
+			<div id="contact">
+				contact us here
+			</div>
+		</div>
+		<script>
+			var currentIndex = 0;
+			var items = $('.team-member');
+			var itemCount = items.length;
+			var refreshTime = 3000;
+
+			function cycleItems(){
+				var item = $('.team-member').eq(currentIndex);
+				items.hide();
+				item.css('display','inline-block');
+			}
+
+			var autoSlide = setInterval(function(){
+				currentIndex += 1;
+				if (currentIndex > itemCount - 1){
+					currentIndex = 0;
+				}
+				cycleItems();
+			},refreshTime);
+
+			// autoSlide;
+
+		</script>
+	<body>
+</html>
