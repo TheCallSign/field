@@ -7,22 +7,50 @@ body {
     border-radius: 20px;
 }
 
+#keys {
+    height: 200px;
+    margin: 10px;
+    padding: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 24pt;
+    color: black;
+    background: wheat;
+    overflow: auto;
+}
+
+li {
+    text-decoration: none;
+    /* transform: rotate(90deg); */
+    display: inline-block;
+    overflow: auto;
+    
+}
+
 .key {
     display: inline-block;
-    transform: rotate(90deg);   
+    /* transform: rotate(90deg);    */
+    margin-top: 5px;
+    /* overflow-x: auto; */
+    
 }
 
 .key a{
-    text-decoration: none;
+    text-decoration: none;    
 }
 
 #team {
+    width: 700px;
+    height: 300px;
+}
 
+#team h1 {
+    transform: rotate(90deg);
+    transform-origin: 0% 0%;
+    float: left;
 }
 
 .team-member {
     display: none;
-    overflow: hidden;
 }
 
 .team-member img {
