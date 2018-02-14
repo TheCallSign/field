@@ -1,65 +1,153 @@
-body {
-    text-align: center;
-}
-
-#video img{
-    width: 600px;
-    border-radius: 20px;
-}
-
-#keys {
-    height: 200px;
-    margin: 10px;
-    padding: 10px;
+ body {
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 24pt;
-    color: black;
-    background: wheat;
-    overflow: auto;
 }
 
-li {
-    text-decoration: none;
-    /* transform: rotate(90deg); */
-    display: inline-block;
-    overflow: auto;
-    
+#content {
+    width: 90%;
+    height: 100%;
+    margin: auto;
+    background-color: #abc;
+    /* overflow: hidden; */
 }
 
-.key {
-    display: inline-block;
-    /* transform: rotate(90deg);    */
-    margin-top: 5px;
-    /* overflow-x: auto; */
-    
+#video{
+    background-image: url("../media/nike.png") ;
+    width: 100%;
+    height: 60%;
+    border-radius: 2em;
+    background-position: center;
+    background-repeat: none;
+    position: relative;
+    margin-bottom: 5%;
+/*     color: white; */
 }
 
-.key a{
-    text-decoration: none;    
-}
-
-#team {
-    width: 700px;
-    height: 300px;
-}
-
-#team h1 {
-    transform: rotate(90deg);
-    transform-origin: 0% 0%;
-    float: left;
-}
-
-.team-member {
+.portolio-item{
     display: none;
 }
 
-.team-member img {
-    margin-right: 15px;
-    float: left;
+.portolio-item:first-child{
+    width: 50%;
+    color: green;
+    position: absolute;
+    margin-top: 2%;
+    left: 4%;
+    font-size: 4em;
 }
 
-.mugshot {
-    width: 300px;
-    height: 200px;
-    border-radius: 10px;
+#video h2 {
+    position: absolute;
+    bottom: 18%;
+    left: 4%;
+    font-size: 2em;
 }
+
+#video p {
+    width: 40%;
+    position: absolute;
+    bottom: 4%;
+    left: 4%;
+    font-size: 1em;
+}
+
+#video #logo {
+    text-align: right;
+    position: absolute;
+    right: 4%;
+    bottom: 18%;
+}
+
+#keys {
+/*     position: relative; */
+    background: blue;
+/*     overflow: scroll; */
+    margin: 3% auto; 
+/*     top: 5%; */
+}
+
+#keys ul {
+    list-style-type: none;
+    transform: rotate(90deg);
+/*     transform-origin: 0 0; */
+    padding:0%;
+/*     width: 100%; */
+/*     margin: 0 auto; */
+    font-size: 3em;
+/*     position: absolute; */
+/*     top: 0%; */
+/*     display: inline; */
+    background: brown;
+}
+
+.key {
+    background: none;
+    font-size: 2em;
+}
+
+.key a {
+    color: black;
+    text-decoration: none;
+    display: block;
+    
+}
+
+.key.investec:hover {
+    background: grey;
+}
+
+.key.nestle:hover {
+    background: tomato;
+}
+
+.key.nike:hover {
+    background: teal;
+}
+
+.key.acne:hover {
+    background: yellow;
+}
+
+.key.castle:hover {
+    background: goldenrod;
+}
+
+.key.truworths:hover {
+    background: pink;
+}
+
+.key.nedbank:hover {
+    background: green;
+}
+
+.key.toyota:hover {
+    background: grey;
+}
+
+.key.adidas:hover {
+    background: thistle;
+}
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,59 +1,121 @@
 <!DOCTYPE>
 <html lang='en'>
 	<head>
-		<title></title>
+		<title>Field</title>
+		<meta name="viewport" content="width=device-width">
 		<meta charset='utf-8'>
 		<link rel="stylesheet" type="text/css" href="styles/stylesheet.css">
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script src="scripts/jquery.js"></script>
+		<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
 	</head>
 	<body>
 		<div id="content">
 			<div id="video">
-				<img src="media/nike.png">
+				<div class="portfolio-item">
+					<h1>investec</h1>
+					<h2>Advertisement</h2>
+					<p>
+						Origional music created by Nicolaas Van Reenen for the 
+						2017 Nike Sports European television campaign
+					</p>
+					<h1 id='logo'>Field</h1>
+				</div>
+				<div class="portfolio-item">
+					<h1>nestle</h1>
+					<h2>Advertisement</h2>
+					<p>
+						Origional music created by Nicolaas Van Reenen for the 
+						2017 Nike Sports European television campaign
+					</p>
+					<h1 id='logo'>Field</h1>
+				</div>
+				<div class="portfolio-item">
+					<h1>nike sports</h1>
+					<h2>Advertisement</h2>
+					<p>
+						Origional music created by Nicolaas Van Reenen for the 
+						2017 Nike Sports European television campaign
+					</p>
+					<h1 id='logo'>Field</h1>
+				</div>
+				<div class="portfolio-item">
+					<h1 id="heading">acne</h1>
+					<h2>Advertisement</h2>
+					<p>
+						Origional music created by Nicolaas Van Reenen for the 
+						2017 Nike Sports European television campaign
+					</p>
+					<h1 id='logo'>Field</h1>
+				</div>
+
 			</div>
-			<br>
+			<!-- <br> -->
 			<div id="keys">
 				<ul>
 					<li>
-						<div class="key" style="background:yellow;">
-							<a href="#">Nike</a>
+						<div class="key investec" >
+							<a href="#">investec</a>
 						</div>
 					</li>
 					<li>
-						<div class="key" style="background:orange;">
-							<a href="#">Toyota</a>
+						<div class="key nestle">
+							<a href="#">nestle</a>
 						</div>
 					</li>
 					<li>
-						<div class="key" style="background:pink;">
-							<a href="#">Guinness</a>
+						<div class="key nike" >
+							<a href="#">nike sports</a>
 						</div>
 					</li>
 					<li>	
-						<div class="key" style="background:lightblue;">
-							<a href="#">Auidi</a>
+						<div class="key acne">
+							<a href="#">acne</a>
 						</div>
 					</li>
 					<li>	
-						<div class="key" style="background:paleturquoise;">
-							<a href="#">Aram Co</a>
+						<div class="key castle">
+							<a href="#">castle</a>
 						</div>
 					</li>
 					<li>
-						<div class="key" style="background:purple;">
-							<a href="#">All Gold</a>
+						<div class="key truworths">
+							<a href="#">truworths</a>
 						</div>
 					</li>
 					<li>	
-						<div class="key" style="background:red;">
-							<a href="#">Dunlop</a>
+						<div class="key nedbank">
+							<a href="#">nedbank</a>
 						</div>
+					</li>
+					<li>	
+						<div class="key toyota">
+							<a href="#">toyota</a>
+						</div>
+					</li>
+					<li>	
+						<div class="key adidas">
+							<a href="#">adidas</a>
+						</div>
+					</li>
+					<li>	
+							<div class="key adidas">
+								<a href="#">adidas</a>
+							</div>
+					</li>
+					<li>	
+							<div class="key adidas">
+								<a href="#">adidas</a>
+							</div>
 					</li>
 				</ul>
 				
 			</div>
+			<!-- 
 			<div id="team">
-				<h1>The Team</h1>
+				<div id="team-heading">
+					<h1>The Team</h1>
+					<img src="media/the-team.png"></img>
+				</div>
 				<div class="team-member" style="display:inline-block;">
 					<img class="mugshot" src="media/fela-kuti.jpg">
 					<h2>Rodney</h2>
@@ -72,30 +134,13 @@
 			</div>
 			<div id="contact">
 				contact us here
-			</div>
+			</div> -->
 		</div>
-		<script>
-			var currentIndex = 0;
-			var items = $('.team-member');
-			var itemCount = items.length;
-			var refreshTime = 3000;
 
-			function cycleItems(){
-				var item = $('.team-member').eq(currentIndex);
-				items.hide();
-				item.css('display','inline-block');
-			}
 
-			var autoSlide = setInterval(function(){
-				currentIndex += 1;
-				if (currentIndex > itemCount - 1){
-					currentIndex = 0;
-				}
-				cycleItems();
-			},refreshTime);
+		<script src="scripts/keys.js"></script>
+		<script src="scripts/team.js"></script>
+			
 
-			// autoSlide;
-
-		</script>
-	<body>
+	</body>
 </html>
