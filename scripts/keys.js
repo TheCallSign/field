@@ -1,10 +1,16 @@
 $( document ).ready(function() {
     console.log( "ready!" );
 
-    // $('div .key').hover(function(){
-    //     $(this).css('background','blue');
-    //     console.log('hover');
-    // });
+
+    $('#keys li').hover(function(){
+        var index = $(this).index();
+
+        var portfolioItem = document.getElementsByClassName('portfolio-item')[index];
+        $(portfolioItem).fadeTo(1000,1);
+
+
+
+    });
 
 });
 
