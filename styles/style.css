@@ -1,6 +1,8 @@
 body {
     padding: 0;
     margin: 0;
+    background: #efefef;
+    
 }
 
 #content {
@@ -15,7 +17,7 @@ body {
     /* display: inline-block; */
     width: 100%;
     position: relative;
-
+    background: blue;
 }
 
 .portfolio-item {
@@ -25,15 +27,15 @@ body {
     background: blue;
     border-radius: 1em;
     position: absolute;
-
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
-/* .portfolio-item:first-child{
+ .portfolio-item:first-child{
     display: block;
-} */
+} 
 
 .portfolio-item div {
-    background: #eee;
     position: absolute;
     max-height: 40%;
     max-width: 60%;
@@ -57,4 +59,62 @@ body {
 .portfolio-item p {
     width: 100%;
     margin-left: 5%;
+}
+
+#nike {
+    background-image: url("../media/nike.png");
+}
+
+#investec {
+    background-image: url("../media/investec.png");
+}
+
+#castle {
+    background-image: url("../media/castle.jpg");
+}
+
+
+ #team {
+    width: 96%;
+    height: 40%;
+    /* overflow: hidden; */
+    position: relative;
+    background: olivedrab;
+    margin: auto;
+    display: inline-block;
+}
+
+#team-heading {
+    float: left;
+    /*position: absolute;*/
+    /* transform: rotate(90deg); */
+    /* display: none; */
+    background: beige;
+    margin: 2%;
+    margin-left: 0%;
+    
+    /* position: relative; */
+    /* width: 60%; */
+}
+
+.team-member {
+    display: none;
+    background: beige;
+    /*max-width: 70%;*/
+    width:100%;
+    /* position: relative; */
+    /* right: -20%; */
+    margin: 2% 0%;
+}
+
+.team-member img {
+    /* margin-right: 15px; */
+    margin: 2% 2% 2% 0%;
+    float: left;
+}
+
+.mugshot {
+    width: 300px;
+    height: 200px;
+    border-radius: 10px;
 }
