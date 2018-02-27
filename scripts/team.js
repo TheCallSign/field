@@ -1,18 +1,28 @@
-var currentIndex = 0;
-			var items = $('.team-member');
-			var itemCount = items.length;
-			var refreshTime = 3000;
+$( document ).ready(function() {
 
-			function cycleItems(){
-				var item = $('.team-member').eq(currentIndex);
-				items.hide();
-				item.css('display','inline-block');
-			}
+//swap team members
+	var currentIndex = 0;
+	var items = $('.team-member');
+	var itemCount = items.length;
+	var refreshTime = 3000;
 
-			var autoSlide = setInterval(function(){
-				currentIndex += 1;
-				if (currentIndex > itemCount - 1){
-					currentIndex = 0;
-				}
-				cycleItems();
-			},refreshTime);
+	function cycleItems(){
+		var item = $('.team-member').eq(currentIndex);
+		items.hide();
+		item.css('display','inline-block');
+	}
+
+	var autoSlide = setInterval(function(){
+		currentIndex += 1;
+		if (currentIndex > itemCount - 1){
+			currentIndex = 0;
+		}
+		cycleItems();
+	},refreshTime);
+
+	$('.team-member li').hover(function(){
+		console.log('hover');
+	});
+
+
+});
