@@ -2,7 +2,6 @@ body {
     padding: 0;
     margin: 0;
     background: #efefef;
-    
 }
 
 #content {
@@ -23,36 +22,35 @@ body {
 #keys {
     overflow-y: hidden;
     overflow-x: scroll;
-    height: 40vh;
     white-space: nowrap;
 }
 
 #keys ul {
-    height: 100%;
+    padding:0%;
+    position: relative;
 }
 
 #keys ul li {
     display: inline-block;
     height: 100%;
     width: 11%;
-    position: relative;
-    top: 0%;
-    margin-top: 0px;
-    background-image: url("media/images/Portfolio-TitleHover(P5).png");
+    vertical-align: top;
+}
+
+#keys a {
+    height: 100%;
+    display: inline-block;
 }
 
 #keys ul li img {
     height: 100%;
-    width: 100%;    
-    position: relative;
-    top: 0%;
+    width: 100%;       
 }
 
 .portfolio-item {
     display: none;
     height: 100%;
     width: 100%;
-/*     background: blue; */
     border-radius: 1em;
     position: absolute;
     background-position: center;
@@ -178,10 +176,15 @@ body {
 #newsletter div {
     width: 50%;
     padding: 1em;
-    background: rgb(3,50,200);
+    background: rgb(3,80,200);
     border-radius: 1em;
 }
 
 #newsletter input {
     margin: 0.5em;
+
+}
+
+#footer img {
+    float: right;
 }
