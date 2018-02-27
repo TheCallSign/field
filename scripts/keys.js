@@ -1,8 +1,13 @@
 $( document ).ready(function() {
-    console.log( "ready!" );
+    var audioCtx = new (window.AudioContext || window.webkitAudioContext)();
     var currentPortfolioItem = document.getElementsByClassName('portfolio-item')[0];
     var mouseX;
     var onKeys = false;
+
+    var notes = [500,800,1100,1400,1700,20000,500];
+    var lowNote = 200;
+    var interval = 100;
+    var noteDuration = 500;
 
     $('#keys li').hover(function(){
         var index = $(this).index();
@@ -22,6 +27,8 @@ $( document ).ready(function() {
         $(currentPortfolioItem).fadeTo(100,0);
         currentPortfolioItem = portfolioItem;
 
+        //play note
+        playNote(lowNote + (index * interval),noteDuration);
 
                
     }, function(){
@@ -57,15 +64,27 @@ $( document ).ready(function() {
 
             console.log('currentScroll: ' + currentScroll);
             console.log('newScroll: ' + $keys.scrollLeft());
-            
-
             console.log("scroll: " + scroll);
-            
         }
-
         
     });
 
-});
+    function playNote(frequency, duration) {
+        // create Oscillator node
+        var oscillator = audioCtx.createOscillator();
+
+        oscillator.type = 'square';
+        oscillator.frequency.value = frequency; // value in hertz
+        oscillator.connect(audioCtx.destination);
+        oscillator.start();
+
+        setTimeout(
+            function(){
+                oscillator.stop();
+            }, duration);
+    }
+
+
+}); //docready
 
 
