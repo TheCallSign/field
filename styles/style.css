@@ -113,7 +113,6 @@ body {
     height: 60%;
      /*overflow: hidden; */
     position: relative;
-    background: olivedrab;
     margin: auto;
     display: inline-block;
 }
@@ -138,7 +137,6 @@ body {
 
 .team-member {
     display: none;
-    background: beige;
     /*max-width: 70%;*/
     width:100%;
     /* position: relative; */
@@ -170,4 +168,20 @@ body {
 
 .team-member p {
     padding-right: 3em;
+}
+
+#newsletter img {
+    margin: 1em 0;
+    width: 40%;
+}
+
+#newsletter div {
+    width: 50%;
+    padding: 1em;
+    background: rgb(3,50,200);
+    border-radius: 1em;
+}
+
+#newsletter input {
+    margin: 0.5em;
 }
