@@ -13,18 +13,46 @@ body {
 }
 
 #video {
-    height: 70%;
+    height: 60vh;
     /* display: inline-block; */
     width: 100%;
     position: relative;
-    background: blue;
+/*     background: blue; */
+}
+
+#keys {
+    overflow-y: hidden;
+    overflow-x: scroll;
+    height: 40vh;
+    white-space: nowrap;
+}
+
+#keys ul {
+    height: 100%;
+}
+
+#keys ul li {
+    display: inline-block;
+    height: 100%;
+    width: 11%;
+    position: relative;
+    top: 0%;
+    margin-top: 0px;
+    background-image: url("media/images/Portfolio-TitleHover(P5).png");
+}
+
+#keys ul li img {
+    height: 100%;
+    width: 100%;    
+    position: relative;
+    top: 0%;
 }
 
 .portfolio-item {
     display: none;
-    height: 60%;
+    height: 100%;
     width: 100%;
-    background: blue;
+/*     background: blue; */
     border-radius: 1em;
     position: absolute;
     background-position: center;
@@ -34,6 +62,12 @@ body {
  .portfolio-item:first-child{
     display: block;
 } 
+
+.portfolio-item img {
+    width: 100%;
+    height: 100%;
+    position: center;
+}
 
 .portfolio-item div {
     position: absolute;
@@ -62,11 +96,11 @@ body {
 }
 
 #nike {
-    background-image: url("../media/nike.png");
+    background-image: url("../media/images/Portfolio-Video(P1).jpg");
 }
 
-#investec {
-    background-image: url("../media/investec.png");
+#acne {
+    background-image: url("../media/images/Portfolio-Video(P2).jpg");
 }
 
 #castle {
