@@ -20,9 +20,7 @@ $( document ).ready(function() {
 		cycleItems();
 	},refreshTime);
 
-	$('.team-member li').hover(function(){
-		console.log('hover');
-	});
+
 
 
 });
