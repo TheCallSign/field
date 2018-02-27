@@ -39,19 +39,28 @@ $( document ).ready(function() {
         mouseX = event.pageX;
 
         if(onKeys){
-            var width = $('#keys ul').width();
+            var width = $('#keys').width();
             var pos = (mouseX / width) * 100;
             var scroll = 0;
 
             if(pos < 33){ //mouse on left hand side, scroll left
-                scroll = -1;
+                scroll = 0 - pos / 10;
             } else if (pos > 66){ //mouse on right hand side, scroll right
-                scroll = 1;
+                scroll = pos / 10;
             } else { //mouse in middle, dont scroll
                 scroll = 0;
             }
 
+            var $keys = $('#keys');
+            var currentScroll = $keys.scrollLeft();
+            $keys.scrollLeft(currentScroll+scroll);
+
+            console.log('currentScroll: ' + currentScroll);
+            console.log('newScroll: ' + $keys.scrollLeft());
+            
+
             console.log("scroll: " + scroll);
+            
         }
 
         
