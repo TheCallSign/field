@@ -4,7 +4,6 @@ $( document ).ready(function() {
     var mouseX;
     var onKeys = false;
 
-    var notes = [500,800,1100,1400,1700,20000,500];
     var lowNote = 200;
     var interval = 100;
     var noteDuration = 500;
