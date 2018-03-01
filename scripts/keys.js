@@ -27,7 +27,8 @@ $( document ).ready(function() {
         currentPortfolioItem = portfolioItem;
 
         //play note
-        playNote(lowNote + (index * interval),noteDuration);
+        //uncomment to turn on keyboard
+        // playNote(lowNote + (index * interval),noteDuration);
 
                
     }, function(){
