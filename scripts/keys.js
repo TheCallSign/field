@@ -19,16 +19,18 @@ $( document ).ready(function() {
         
         //change video
         var portfolioItem = document.getElementsByClassName('portfolio-item')[index];
-        currentPortfolioItem.style.zIndex = "-1";
-        portfolioItem.style.zIndex = "1";
+        if(portfolioItem){
+            currentPortfolioItem.style.zIndex = "-1";
+            portfolioItem.style.zIndex = "1";
 
-        $(portfolioItem).fadeTo(700,1);
-        $(currentPortfolioItem).fadeTo(100,0);
-        currentPortfolioItem = portfolioItem;
+            $(portfolioItem).fadeTo(700,1);
+            $(currentPortfolioItem).fadeTo(100,0);
+            currentPortfolioItem = portfolioItem;
+        }
 
         //play note
         //uncomment to turn on keyboard
-        // playNote(lowNote + (index * interval),noteDuration);
+        //  playNote(lowNote + (index * interval),noteDuration);
 
                
     }, function(){
@@ -36,27 +38,22 @@ $( document ).ready(function() {
         
     });
 
+    var keyHoverLoop;
+
     $('#keys ul').hover(()=>{
         onKeys = true;
-    }, () => {
-        onKeys = false;
-
-    });
-
-    $(document).mousemove(function(event){
-        mouseX = event.pageX;
-
-        if(onKeys){
+        keyHoverLoop = setInterval(()=>{
             var width = $('#keys').width();
             var pos = (mouseX / width) * 100;
             var scroll = 0;
             var multiplier = 3;
 
             if(pos < 33){ //mouse on left hand side, scroll left
-                scroll = 0 - pos / 10;
-                // scroll += 10;
+                pos /= 10;
+                scroll = map(pos,0,10,-5,5);
             } else if (pos > 66){ //mouse on right hand side, scroll right
-                scroll = pos / 10;
+                pos /= 10;
+                scroll = map(pos,0,10,-5,5);
             } else { //mouse in middle, dont scroll
                 scroll = 0;
             }
@@ -68,11 +65,17 @@ $( document ).ready(function() {
             var currentScroll = $keys.scrollLeft();
             $keys.scrollLeft(currentScroll+scroll);
 
-            // console.log('currentScroll: ' + currentScroll);
-            // console.log('newScroll: ' + $keys.scrollLeft());
-            // console.log("scroll: " + scroll);
-        }
-        
+            console.log("scroll: " + scroll);
+
+        },10);
+    }, () => {
+        onKeys = false;
+        console.log('offKeys');
+        clearInterval(keyHoverLoop);
+    });
+
+    $(document).mousemove(function(event){
+        mouseX = event.pageX;
     });
 
     function playNote(frequency, duration) {
@@ -88,6 +91,10 @@ $( document ).ready(function() {
             function(){
                 oscillator.stop();
             }, duration);
+    }
+
+    function map(x,in_min,in_max,out_min,out_max){
+        return Math.round((x - in_min) * (out_max - out_min) / (in_max - in_min) + out_min);
     }
 
 
