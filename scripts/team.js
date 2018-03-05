@@ -35,14 +35,19 @@ function cycleItems(){
 
 
 function scrollTeam(direction){
+	var newIndex = currentIndex + direction;
+
 	//check boundries
-	if(currentIndex + direction >= 0 && currentIndex + direction < numTeamMembers){
-		console.log('currentIndex : ' + currentIndex);
-		currentIndex += direction;
-		console.log('scrolling to : ' + currentIndex);
-		cycleItems();
+	if(newIndex >= 0){ //can go left
+		if(newIndex < numTeamMembers){ //can go right
+			currentIndex = newIndex;
+			cycleItems();
+			$('.arrow-control').css('display','inline-block');
+			
+		} else {
+			$('#arrow-right').css('display','none');			
+		}
 	} else {
-		console.log('I cant go that way anymore.' + 'cIndex: ' + currentIndex);
-		
-	}
+		$('#arrow-left').css('display','none');
+	} 
 }
