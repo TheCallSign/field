@@ -170,21 +170,24 @@ body {
     padding-right: 3em;
 }
 
+
 #newsletter img {
     margin: 1em 0;
     width: 40%;
 }
 
-#newsletter div {
+#mc_embed_signup{
     width: 50%;
-    padding: 1em;
+    /*padding: 1em;*/
     background: rgb(3,80,200);
     border-radius: 1em;
+    padding: 1em
 }
 
-#newsletter input {
-    margin: 0.5em;
 
+#newsletter input {
+    display: inline-block;
+    margin: 1%;
 }
 
 #footer img {

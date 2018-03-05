@@ -30,7 +30,7 @@ $( document ).ready(function() {
 
         //play note
         //uncomment to turn on keyboard
-        //  playNote(lowNote + (index * interval),noteDuration);
+         playNote(lowNote + (index * interval),noteDuration);
 
                
     }, function(){
@@ -40,7 +40,7 @@ $( document ).ready(function() {
 
     var keyHoverLoop;
 
-    $('#keys ul').hover(()=>{
+    $('#keys').hover(()=>{
         onKeys = true;
         keyHoverLoop = setInterval(()=>{
             var width = $('#keys').width();
