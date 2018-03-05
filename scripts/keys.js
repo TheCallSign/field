@@ -1,9 +1,9 @@
+    var muted = false;
 $( document ).ready(function() {
     var audioCtx = new (window.AudioContext || window.webkitAudioContext)();
     var currentPortfolioItem = document.getElementsByClassName('portfolio-item')[0];
     var mouseX;
     var onKeys = false;
-
     var lowNote = 200;
     var interval = 100;
     var noteDuration = 500;
@@ -79,18 +79,21 @@ $( document ).ready(function() {
     });
 
     function playNote(frequency, duration) {
-        // create Oscillator node
-        var oscillator = audioCtx.createOscillator();
+        //check if sound is enabled
+        if(!muted){
+            // create Oscillator node
+            var oscillator = audioCtx.createOscillator();
 
-        oscillator.type = 'sine';
-        oscillator.frequency.value = frequency; // value in hertz
-        oscillator.connect(audioCtx.destination);
-        oscillator.start();
+            oscillator.type = 'sine';
+            oscillator.frequency.value = frequency; // value in hertz
+            oscillator.connect(audioCtx.destination);
+            oscillator.start();
 
-        setTimeout(
-            function(){
-                oscillator.stop();
-            }, duration);
+            setTimeout(
+                function(){
+                    oscillator.stop();
+                }, duration);
+        }
     }
 
     function map(x,in_min,in_max,out_min,out_max){
@@ -100,4 +103,13 @@ $( document ).ready(function() {
 
 }); //docready
 
-
+    function toggleMute(){
+        muted = !muted;
+        var color;
+        if (muted){
+            color = "red";
+        } else {
+            color = "none";
+        }
+        $('#mute').css('background', color);
+    }
