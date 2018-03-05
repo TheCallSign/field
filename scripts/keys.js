@@ -1,4 +1,5 @@
     var muted = false;
+    toggleMute(); //set mute on by default
 $( document ).ready(function() {
     var audioCtx = new (window.AudioContext || window.webkitAudioContext)();
     var currentPortfolioItem = document.getElementsByClassName('portfolio-item')[0];

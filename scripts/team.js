@@ -6,6 +6,8 @@ $( document ).ready(function() {
 	var itemCount = items.length;
 	var refreshTime = 3000;
 
+	var paused = false;
+
 	function cycleItems(){
 		var item = $('.team-member').eq(currentIndex);
 		items.hide();
@@ -17,10 +19,20 @@ $( document ).ready(function() {
 		if (currentIndex > itemCount - 1){
 			currentIndex = 0;
 		}
-		cycleItems();
+		if(!paused){
+			cycleItems();
+		}
 	},refreshTime);
 
 
-
+	$('#team').hover(function(){
+		paused = true;
+	}, function(){
+		paused = false;
+	});
 
 });
+
+function scrollTeam(){
+
+}
