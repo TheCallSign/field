@@ -1,12 +1,16 @@
 	var currentIndex = 0;
 	var teamMembers = $('.team-member');
 	var numTeamMembers = teamMembers.length;
+	var paused = false;
+	var arrowLeft;
+	var arrowRight;
+	
 $( document ).ready(function() {
-
+	arrowLeft = $('#arrow-left');
+	arrowRight = $('#arrow-right');
+	
 //swap team members
 	var refreshTime = 3000;
-
-	var paused = false;
 
 	var autoSlide = setInterval(function(){
 		if(!paused){
@@ -18,11 +22,12 @@ $( document ).ready(function() {
 		}
 	},refreshTime);
 
-
 	$('#team').hover(function(){
 		paused = true;
+		displayArrowControls(); //show arrows			
 	}, function(){
 		paused = false;
+		displayArrowControls(); //hide arrows
 	});
 
 });
@@ -30,24 +35,35 @@ $( document ).ready(function() {
 function cycleItems(){
 	var item = $('.team-member').eq(currentIndex);
 	teamMembers.hide();
-	item.css('display','inline-block');
+	item.css('display','inline-block');	
 }
 
-
 function scrollTeam(direction){
-	var newIndex = currentIndex + direction;
+	if(currentIndex+direction>=0 && currentIndex+direction <numTeamMembers){
+		console.log('currentIndex: ' + currentIndex);
+		currentIndex += direction;
+		console.log('newIndex: ' + currentIndex);
+		displayArrowControls(); //update arrows		
+		cycleItems();
+	}
+}
 
-	//check boundries
-	if(newIndex >= 0){ //can go left
-		if(newIndex < numTeamMembers){ //can go right
-			currentIndex = newIndex;
-			cycleItems();
-			$('.arrow-control').css('display','inline-block');
-			
-		} else {
-			$('#arrow-right').css('display','none');			
+function displayArrowControls(){
+	if (paused){
+		if(currentIndex > 0){ //check left
+			if(currentIndex < numTeamMembers -1 ){ //check right
+				arrowLeft.show();			
+				arrowRight.show();			
+			} else { //cant go right
+				arrowRight.hide();			
+				arrowLeft.show();
+			}
+		} else { //cant go left
+				arrowLeft.hide();
+				arrowRight.show();		
 		}
-	} else {
-		$('#arrow-left').css('display','none');
-	} 
+	} else { //not paused
+		arrowLeft.hide();			
+		arrowRight.hide();		
+	}
 }
