@@ -208,8 +208,3 @@ body {
     right: 0%;
 }
 
-/*display arrow controls on hover*/
-#team:hover > .arrow-control {
-    display: inline-block;
-}
-
