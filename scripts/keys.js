@@ -30,9 +30,7 @@ $( document ).ready(function() {
         }
 
         //play note
-        //uncomment to turn on keyboard
          playNote(lowNote + (index * interval),noteDuration);
-
                
     }, function(){
         $(this).css('background-image', '');
@@ -66,12 +64,9 @@ $( document ).ready(function() {
             var currentScroll = $keys.scrollLeft();
             $keys.scrollLeft(currentScroll+scroll);
 
-            console.log("scroll: " + scroll);
-
         },10);
     }, () => {
         onKeys = false;
-        console.log('offKeys');
         clearInterval(keyHoverLoop);
     });
 
