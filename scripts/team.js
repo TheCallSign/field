@@ -40,9 +40,7 @@ function cycleItems(){
 
 function scrollTeam(direction){
 	if(currentIndex+direction>=0 && currentIndex+direction <numTeamMembers){
-		console.log('currentIndex: ' + currentIndex);
 		currentIndex += direction;
-		console.log('newIndex: ' + currentIndex);
 		displayArrowControls(); //update arrows		
 		cycleItems();
 	}
