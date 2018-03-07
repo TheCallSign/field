@@ -15,7 +15,15 @@ body {
     cursor: url('../media/images/Cursor.png'), auto;
     overflow: auto;
     font-family: MalterSans;
-    
+    font-size: 21pt;
+}
+
+h1 {
+    font-size: 120pt;
+}
+
+h2 {
+    font-size: 48pt;
 }
 
 #content {
@@ -138,7 +146,7 @@ body {
 }
 
 .mugshot {
-    width: 50%;
+    width: 40%;
     height: 100%;
     border-radius: 1em;
     float: left;
