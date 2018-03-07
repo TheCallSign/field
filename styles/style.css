@@ -172,7 +172,21 @@ body {
 
 .team-member li:hover:before {
     content: "~";
+    animation-name: fadeIn;
+    animation-duration: 0.3s;
 }
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+
 
 .team-member p {
     padding-right: 3em;
