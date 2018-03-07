@@ -2,10 +2,11 @@ var muted = false;
 toggleMute(); //set mute on by default
 var mouseX;
 var mouseY;
-
+var startingPortfolio = 6;
 $( document ).ready(function() {
     var audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-    var currentPortfolioItem = document.getElementsByClassName('portfolio-item')[0];
+    var lastPortfolioItem = $('.portfolio-item').eq(startingPortfolio);//document.getElementsByClassName('portfolio-item')[0];
+    var portfolioItem = lastPortfolioItem;
     var onKeys = false;
     var lowNote = 200;
     var interval = 100;
@@ -19,29 +20,31 @@ $( document ).ready(function() {
     var lastIndex;
     var keySoundLoop;
     var scroll = 0;
+    var portfolioFadeTime = 700;
+
+    //display starting portfolio piece
+
 
     $('#keys li').hover(function(){
         index = $(this).index();
         key = keys.eq(index);
         //fade out last background
-        if(lastIndex != index){ //make sure the last background isnt the current background
+        if(lastIndex != index){ //make sure the last selection isnt the current selection
             keyBackgrounds.eq(lastIndex).fadeTo(keyFadeTime,0);
-        }
-        //show selected background
-        background = keyBackgrounds.eq(index);
-        background.fadeTo(keyFadeTime,1);
-        //update last background
-        lastIndex = index;
+            //show selected background
+            background = keyBackgrounds.eq(index);
+            background.fadeTo(keyFadeTime,1);
 
-        //change video
-        var portfolioItem = document.getElementsByClassName('portfolio-item')[index];
-        if(portfolioItem){
-            currentPortfolioItem.style.zIndex = "-1";
-            portfolioItem.style.zIndex = "1";
-
-            $(portfolioItem).fadeTo(700,1);
-            $(currentPortfolioItem).fadeTo(100,0);
-            currentPortfolioItem = portfolioItem;
+            //change video
+            portfolioItem = $('.portfolio-item').eq(index);
+            lastPortfolioItem.css('z-index',-1);
+            portfolioItem.css('z-index',1);
+            portfolioItem.fadeTo(portfolioFadeTime, 1);
+            lastPortfolioItem.fadeTo(portfolioFadeTime, 0);
+            lastPortfolioItem = portfolioItem;
+        
+            //update last background
+            lastIndex = index;
         }
 
         //play note

@@ -30,6 +30,10 @@ $( document ).ready(function() {
 		displayArrowControls(); //hide arrows
 	});
 
+	$('#team').mousemove(function(event){
+		console.log(event.pageY);
+		// console.log('scroll: ' + $(this).scrollTop());
+	});
 	
 
 }); //docready
