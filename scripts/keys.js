@@ -38,36 +38,43 @@ $( document ).ready(function() {
     });
 
     var keyHoverLoop;
+    var scroll = 0;
 
     $('#keys').hover(()=>{
         onKeys = true;
+        var step = 0.2;
+
         keyHoverLoop = setInterval(()=>{
             var width = $('#keys').width();
             var pos = (mouseX / width) * 100;
-            var scroll = 0;
             var multiplier = 3;
+            var maxSpeed = 3;
 
             if(pos < 33){ //mouse on left hand side, scroll left
-                pos /= 10;
-                scroll = map(pos,0,10,-5,5);
+                
+                if(Math.abs(scroll) < maxSpeed ){
+                    scroll -= step;               
+                }
             } else if (pos > 66){ //mouse on right hand side, scroll right
-                pos /= 10;
-                scroll = map(pos,0,10,-5,5);
+                if(Math.abs(scroll) < maxSpeed ){
+                    scroll += step;                    
+                }
             } else { //mouse in middle, dont scroll
                 scroll = 0;
             }
 
-            //multiply scroll 
-            // scroll *= multiplier;
+            console.log('scroll: ' + scroll)
 
             var $keys = $('#keys');
             var currentScroll = $keys.scrollLeft();
             $keys.scrollLeft(currentScroll+scroll);
 
         },10);
+
     }, () => {
         onKeys = false;
         clearInterval(keyHoverLoop);
+        scroll = 0;
     });
 
     $(document).mousemove(function(event){
