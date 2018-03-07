@@ -18,6 +18,9 @@ $( document ).ready(function() {
     $('#keys li').hover(function(){
         index = $(this).index();
         key = keys.eq(index);
+        //fade out other backgrounds
+        keyBackgrounds.filter((i)=>{return i!=index}).fadeTo(keyFadeTime,0);
+        //show selected background
         background = keyBackgrounds.eq(index);
         background.fadeTo(keyFadeTime,1);
 
@@ -36,8 +39,7 @@ $( document ).ready(function() {
          playNote(lowNote + (index * interval),noteDuration);
                
     }, function(){
-        background.fadeTo(keyFadeTime,0);
-        
+        //clear all backgrounds except last one        
     });
 
     var keyHoverLoop;
