@@ -14,15 +14,20 @@ $( document ).ready(function() {
     var keyBackgrounds = $('.key-background');
     var key;
     var background;
+    var lastIndex;
 
     $('#keys li').hover(function(){
         index = $(this).index();
         key = keys.eq(index);
-        //fade out other backgrounds
-        keyBackgrounds.filter((i)=>{return i!=index}).fadeTo(keyFadeTime,0);
+        //fade out last background
+        if(lastIndex != index){ //make sure the last background isnt the current background
+            keyBackgrounds.eq(lastIndex).fadeTo(keyFadeTime,0);
+        }
         //show selected background
         background = keyBackgrounds.eq(index);
         background.fadeTo(keyFadeTime,1);
+        //update last background
+        lastIndex = index;
 
         //change video
         var portfolioItem = document.getElementsByClassName('portfolio-item')[index];
