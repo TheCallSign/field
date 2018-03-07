@@ -8,16 +8,19 @@ $( document ).ready(function() {
     var lowNote = 200;
     var interval = 100;
     var noteDuration = 500;
+    var keyFadeTime = 300;
+    var index;
+    var keys = $('.keys');
+    var keyBackgrounds = $('.key-background');
+    var key;
+    var background;
 
     $('#keys li').hover(function(){
-        var index = $(this).index();
+        index = $(this).index();
+        key = keys.eq(index);
+        background = keyBackgrounds.eq(index);
+        background.fadeTo(keyFadeTime,1);
 
-        //display key background color
-        var backgroundImage = 'url("media/images/Backgorund/Portfolio-TitleHover(P' + (index + 1) +').png")';
-        $(this).css('background-image', backgroundImage);
-        $(this).css('background-position', 'center');
-        $(this).css('border-radius', '0.6em');
-        
         //change video
         var portfolioItem = document.getElementsByClassName('portfolio-item')[index];
         if(portfolioItem){
@@ -33,7 +36,7 @@ $( document ).ready(function() {
          playNote(lowNote + (index * interval),noteDuration);
                
     }, function(){
-        $(this).css('background-image', '');
+        background.fadeTo(keyFadeTime,0);
         
     });
 
@@ -62,8 +65,6 @@ $( document ).ready(function() {
             } else { //mouse in middle, dont scroll
                 scroll = 0;
             }
-
-            console.log('scroll: ' + scroll)
 
             var $keys = $('#keys');
             var currentScroll = $keys.scrollLeft();

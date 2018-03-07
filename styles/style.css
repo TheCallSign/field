@@ -26,6 +26,7 @@ body {
     white-space: nowrap;
 }
 
+
 #keys ul {
     padding:0%;
     position: relative;
@@ -36,19 +37,35 @@ body {
     height: 100%;
     width: 11%;
     vertical-align: top;
-    /*padding: 10%; */
-    /*test scroll ^*/
 }
 
 #keys a {
     height: 100%;
     display: inline-block;
+    position: relative;
 }
 
 #keys ul li img {
     height: 100%;
-    width: 100%;       
+    width: 100%;
 }
+
+.key {       
+    position: absolute;
+    left: 0%;   
+    z-index: 1;
+}
+
+.key-background {
+   /*position: center;*/
+   opacity: 0;
+   z-index: -1;
+}
+
+/*.key:hover ~ .key-background{
+    opacity: 1;
+}*/
+
 
 .portfolio-item {
     display: none;
