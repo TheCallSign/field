@@ -85,7 +85,6 @@ $( document ).ready(function() {
         onKeys = false;
         clearInterval(keySoundLoop);
         scroll = 0;
-        console.log('end sound');
     });
 
     $(document).mousemove(function(event){

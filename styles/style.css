@@ -1,9 +1,21 @@
+@font-face {
+    font-family: MalterSans;
+    src: url('../media/fonts/malter-sans-demo-webfont.woff2') format('woff2'),
+         url('../media/fonts/malter-sans-demo-webfont.woff') format('woff'),
+         url('../media/fonts/malter-sans-demo-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
 body {
     padding: 0;
     margin: 0;
     background: #efefef;
-    cursor: url(media/images/Cursor1.png), auto;
+    cursor: url('../media/images/Cursor.png'), auto;
     overflow: auto;
+    font-family: MalterSans;
+    
 }
 
 #content {
@@ -155,6 +167,7 @@ body {
 
 .team-member p {
     padding-right: 3em;
+    
 }
 
 
