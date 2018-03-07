@@ -1,9 +1,11 @@
-    var muted = false;
-    toggleMute(); //set mute on by default
+var muted = false;
+toggleMute(); //set mute on by default
+var mouseX;
+var mouseY;
+
 $( document ).ready(function() {
     var audioCtx = new (window.AudioContext || window.webkitAudioContext)();
     var currentPortfolioItem = document.getElementsByClassName('portfolio-item')[0];
-    var mouseX;
     var onKeys = false;
     var lowNote = 200;
     var interval = 100;
@@ -15,6 +17,8 @@ $( document ).ready(function() {
     var key;
     var background;
     var lastIndex;
+    var keySoundLoop;
+    var scroll = 0;
 
     $('#keys li').hover(function(){
         index = $(this).index();
@@ -43,25 +47,20 @@ $( document ).ready(function() {
         //play note
          playNote(lowNote + (index * interval),noteDuration);
                
-    }, function(){
-        //clear all backgrounds except last one        
     });
 
-    var keyHoverLoop;
-    var scroll = 0;
 
     $('#keys').hover(()=>{
         onKeys = true;
         var step = 0.2;
 
-        keyHoverLoop = setInterval(()=>{
+        keySoundLoop = setInterval(()=>{
             var width = $('#keys').width();
             var pos = (mouseX / width) * 100;
             var multiplier = 3;
             var maxSpeed = 3;
 
-            if(pos < 33){ //mouse on left hand side, scroll left
-                
+            if(pos < 33){ //mouse on left hand side, scroll left                
                 if(Math.abs(scroll) < maxSpeed ){
                     scroll -= step;               
                 }
@@ -81,12 +80,14 @@ $( document ).ready(function() {
 
     }, () => {
         onKeys = false;
-        clearInterval(keyHoverLoop);
+        clearInterval(keySoundLoop);
         scroll = 0;
+        console.log('end sound');
     });
 
     $(document).mousemove(function(event){
         mouseX = event.pageX;
+        mouseY = event.pageY;
     });
 
     function playNote(frequency, duration) {
@@ -114,13 +115,13 @@ $( document ).ready(function() {
 
 }); //docready
 
-    function toggleMute(){
-        muted = !muted;
-        var color;
-        if (muted){
-            color = "red";
-        } else {
-            color = "none";
-        }
-        $('#mute').css('background', color);
+function toggleMute(){
+    muted = !muted;
+    var color;
+    if (muted){
+        color = "red";
+    } else {
+        color = "none";
     }
+    $('#mute').css('background', color);
+}

@@ -3,6 +3,7 @@ body {
     margin: 0;
     background: #efefef;
     cursor: url(media/images/Cursor1.png), auto;
+    overflow: auto;
 }
 
 #content {
@@ -156,12 +157,6 @@ body {
     /* right: -20%; */
     margin: 2% 0%;
 }
-
-/*.team-member img {
-    /* margin-right: 15px; */
-    /*margin: 2% 2% 2% 0%;
-    float: left;
-}*/
 
 .mugshot {
     width: 50%;
