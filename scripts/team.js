@@ -4,6 +4,7 @@
 	var paused = false;
 	var arrowLeft;
 	var arrowRight;
+	var arrowFadeTime = 200;
 	
 $( document ).ready(function() {
 	arrowLeft = $('#arrow-left');
@@ -50,18 +51,18 @@ function displayArrowControls(){
 	if (paused){
 		if(currentIndex > 0){ //check left
 			if(currentIndex < numTeamMembers -1 ){ //check right
-				arrowLeft.show();			
-				arrowRight.show();			
+				arrowLeft.fadeTo(arrowFadeTime,1);			
+				arrowRight.fadeTo(arrowFadeTime,1);			
 			} else { //cant go right
-				arrowRight.hide();			
-				arrowLeft.show();
+				arrowRight.fadeTo(arrowFadeTime,0);			
+				arrowLeft.fadeTo(arrowFadeTime,1);
 			}
 		} else { //cant go left
-				arrowLeft.hide();
-				arrowRight.show();		
+				arrowLeft.fadeTo(arrowFadeTime,0);
+				arrowRight.fadeTo(arrowFadeTime,1);		
 		}
 	} else { //not paused
-		arrowLeft.hide();			
-		arrowRight.hide();		
+		arrowLeft.fadeTo(arrowFadeTime,0);			
+		arrowRight.fadeTo(arrowFadeTime,0);		
 	}
 }

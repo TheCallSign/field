@@ -210,7 +210,7 @@ body {
 .arrow-control{
     width: 10%;
     height: 10%;
-    display: none;
+    opacity: 0;
 }
 
 #arrow-left {
