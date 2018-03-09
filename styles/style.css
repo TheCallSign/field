@@ -5,14 +5,13 @@
          url('../media/fonts/malter-sans-demo-webfont.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
-
 }
 
 body {
     padding: 0;
     margin: 0;
     background: #efefef;
-    cursor: url('../media/images/Cursor.png'), auto;
+    cursor: url('../media/images/Cursor(T1).png'), auto;
     overflow: auto;
     font-family: MalterSans;
     font-size: 21pt;
@@ -101,18 +100,81 @@ h2 {
     position: center;
 }
 
-#nike {
-    background-image: url("../media/images/Portfolio-Video(P1).jpg");
+video {
+    display: none;
+    position: absolute;
+    border-radius: 10px;
+    width: 100%;
+    height: 100%;
+    
 }
 
-#acne {
-    background-image: url("../media/images/Portfolio-Video(P2).jpg");
+#addidas {
+    background-image: url("../media/images/Portfolio-Thumbnail(P1).jpg");
+
+}
+
+#toyota {
+    background-image: url("../media/images/Portfolio-Thumbnail(P2).jpg");
+
+}
+
+#nedbank {
+    background-image: url("../media/images/Portfolio-Thumbnail(P3).jpg");
+
+}
+
+#truworths {
+    background-image: url("../media/images/Portfolio-Thumbnail(P4).jpg");
 }
 
 #castle {
-    background-image: url("../media/castle.jpg");
+    background-image: url("../media/images/Portfolio-Thumbnail(P5).jpg");
 }
 
+#acne {
+    background-image: url("../media/images/Portfolio-Thumbnail(P6).jpg");
+}
+
+
+#nike {
+    background-image: url("../media/images/Portfolio-Thumbnail(P7).jpg");
+}
+
+#nestle {
+    background-image: url("../media/images/Portfolio-Thumbnail(P8).jpg");
+    
+}
+
+#investec {
+    background-image: url("../media/images/Portfolio-Thumbnail(P9).jpg");
+    
+}
+
+#duolingo {
+    background-image: url("../media/images/Portfolio-Thumbnail(P10).jpg");
+    
+}
+
+#diesel {
+    background-image: url("../media/images/Portfolio-Thumbnail(P11).jpg");
+    
+}
+
+#emirates {
+    background-image: url("../media/images/Portfolio-Thumbnail(P12).jpg");
+    
+}
+
+#disney {
+    background-image: url("../media/images/Portfolio-Thumbnail(P13).jpg");
+    
+}
+
+#paypal {
+    background-image: url("../media/images/Portfolio-Thumbnail(P14).jpg");
+    
+}
 
  #team {
     /*width: 100%;
