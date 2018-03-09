@@ -12,15 +12,16 @@ $( document ).ready(function() {
     var interval = 100;
     var noteDuration = 500;
     var keyFadeTime = 300;
-    var index;
+    var index = 0;
     var keys = $('.keys');
     var keyBackgrounds = $('.key-background');
     var key;
     var background;
-    var lastIndex;
+    var lastIndex = index;
     var keySoundLoop;
     var scroll = 0;
     var portfolioFadeTime = 700;
+    var playingVideo = false;
 
     //display starting portfolio piece
 
@@ -61,7 +62,7 @@ $( document ).ready(function() {
             var width = $('#keys').width();
             var pos = (mouseX / width) * 100;
             var multiplier = 3;
-            var maxSpeed = 3;
+            var maxSpeed = 6;
 
             if(pos < 33){ //mouse on left hand side, scroll left                
                 if(Math.abs(scroll) < maxSpeed ){
@@ -87,10 +88,32 @@ $( document ).ready(function() {
         scroll = 0;
     });
 
+    $('#keys li').click(function(){
+        playVideo(index);
+    });
+
+    $('#video').click(function(){
+        playVideo(index);
+    });
+
     $(document).mousemove(function(event){
         mouseX = event.pageX;
         mouseY = event.pageY;
     });
+
+    function playVideo(videoIndex){
+        var portfolioItem = $('.portfolio-item')[videoIndex];
+        var video = $(portfolioItem).children('video');
+        $(portfolioItem).children('img').css('display','none');
+        $(video).css('display','inline-block');
+        if(!playingVideo){
+            $(video)[0].play();
+        } else {
+            $(video)[0].pause();            
+        }
+        playingVideo = !playingVideo;
+        
+    }
 
     function playNote(frequency, duration) {
         //check if sound is enabled
