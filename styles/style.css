@@ -97,82 +97,15 @@ h2 {
 .portfolio-item img {
     width: 100%;
     height: 100%;
-    position: center;
+    position: absolute;
 }
 
 video {
-    display: none;
+    opacity: 0;    
     position: absolute;
-    border-radius: 10px;
+    border-radius: 5em;
     width: 100%;
     height: 100%;
-    
-}
-
-#addidas {
-    background-image: url("../media/images/Portfolio-Thumbnail(P1).jpg");
-
-}
-
-#toyota {
-    background-image: url("../media/images/Portfolio-Thumbnail(P2).jpg");
-
-}
-
-#nedbank {
-    background-image: url("../media/images/Portfolio-Thumbnail(P3).jpg");
-
-}
-
-#truworths {
-    background-image: url("../media/images/Portfolio-Thumbnail(P4).jpg");
-}
-
-#castle {
-    background-image: url("../media/images/Portfolio-Thumbnail(P5).jpg");
-}
-
-#acne {
-    background-image: url("../media/images/Portfolio-Thumbnail(P6).jpg");
-}
-
-
-#nike {
-    background-image: url("../media/images/Portfolio-Thumbnail(P7).jpg");
-}
-
-#nestle {
-    background-image: url("../media/images/Portfolio-Thumbnail(P8).jpg");
-    
-}
-
-#investec {
-    background-image: url("../media/images/Portfolio-Thumbnail(P9).jpg");
-    
-}
-
-#duolingo {
-    background-image: url("../media/images/Portfolio-Thumbnail(P10).jpg");
-    
-}
-
-#diesel {
-    background-image: url("../media/images/Portfolio-Thumbnail(P11).jpg");
-    
-}
-
-#emirates {
-    background-image: url("../media/images/Portfolio-Thumbnail(P12).jpg");
-    
-}
-
-#disney {
-    background-image: url("../media/images/Portfolio-Thumbnail(P13).jpg");
-    
-}
-
-#paypal {
-    background-image: url("../media/images/Portfolio-Thumbnail(P14).jpg");
     
 }
 

@@ -88,12 +88,11 @@ $( document ).ready(function() {
         scroll = 0;
     });
 
-    $('#keys li').click(function(){
-        playVideo(index);
-    });
-
-    $('#video').click(function(){
-        playVideo(index);
+    $('#keys li,#video').click(function(){
+        // if(lastIndex != index){
+        //     playingVideo = true;
+        // }
+            playVideo(index);
     });
 
     $(document).mousemove(function(event){
@@ -104,8 +103,8 @@ $( document ).ready(function() {
     function playVideo(videoIndex){
         var portfolioItem = $('.portfolio-item')[videoIndex];
         var video = $(portfolioItem).children('video');
-        $(portfolioItem).children('img').css('display','none');
-        $(video).css('display','inline-block');
+        $(portfolioItem).children('img').fadeTo(portfolioFadeTime,0);//css('display','none');
+        $(video).fadeTo(portfolioFadeTime,1);//css('display','inline-block');
         if(!playingVideo){
             $(video)[0].play();
         } else {
@@ -149,4 +148,8 @@ function toggleMute(){
         color = "none";
     }
     $('#mute').css('background', color);
+    $('audio,video').each(function(){
+        $(this).prop('muted', muted);
+    });
+
 }
