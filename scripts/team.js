@@ -5,7 +5,7 @@ var paused = false;
 var arrowLeft;
 var arrowRight;
 var arrowFadeTime = 200;
-var teamInfoFadeTime = 500;
+var teamInfoFadeTime = 300;
 var cycleTime = 5000;
 	
 $( document ).ready(function() {
@@ -25,15 +25,16 @@ $( document ).ready(function() {
 
 	$('#team').hover(function(event){
 		paused = true;
-		displayArrowControls(); //show arrows			
+		// displayArrowControls(); //show arrows			
 	}, function(){
 		paused = false;
-		displayArrowControls(); //hide arrows
+		// displayArrowControls(); //hide arrows
 	});
 
-	$('#team').mousemove(function(event){
-		console.log(event.pageY);
-		// console.log('scroll: ' + $(this).scrollTop());
+	$('.mouse-trap').hover(function(event){
+		displayArrowControls();
+	}, function() {
+		hideArrowControls();
 	});
 	
 
@@ -73,6 +74,12 @@ function scrollTeam(direction){
 		displayArrowControls(); //update arrows		
 		cycleItems();
 	}
+}
+
+function hideArrowControls(){
+	arrowLeft.fadeTo(arrowFadeTime, 0);
+	arrowRight.fadeTo(arrowFadeTime, 0);
+	
 }
 
 function displayArrowControls(){

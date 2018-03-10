@@ -49,11 +49,11 @@ $( document ).ready(function() {
             }
             //update last background
             lastIndex = index;
-        }
 
         //play note
          playNote(lowNote + (index * interval),noteDuration);
                
+        }
     });
 
 

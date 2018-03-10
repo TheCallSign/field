@@ -175,6 +175,15 @@ video {
     
 }
 
+.mouse-trap {
+    content: '';
+    height: 50%;
+    width: 100%;
+    /*background: rgba(200, 100,50, 0.5);*/
+    position: absolute;
+    bottom: 0%;
+}
+
 
 #newsletter img {
     margin: 1em 0;
@@ -202,6 +211,7 @@ video {
     width: 10%;
     height: 10%;
     opacity: 0;
+    z-index: 1;
 }
 
 #arrow-left {
