@@ -5,6 +5,7 @@ var paused = false;
 var arrowLeft;
 var arrowRight;
 var arrowFadeTime = 200;
+var teamInfoFadeTime = 500;
 var cycleTime = 5000;
 	
 $( document ).ready(function() {
@@ -42,6 +43,28 @@ function cycleItems(){
 	var item = $('.team-member').eq(currentIndex);
 	teamMembers.hide();
 	item.css('display','inline-block');	
+	//fade out alles
+	var img = item.children('img');
+	var name = item.children('h2');
+	var roles = item.children('ul');
+	var text = item.children('p');
+	img.css('opacity', 0);
+	name.css('opacity', 0);
+	roles.css('opacity', 0);
+	text.css('opacity', 0);
+
+	//fade in image
+	img.fadeTo(teamInfoFadeTime, 1, function(){
+		//fade in name
+		name.fadeTo(teamInfoFadeTime, 1, function(){
+			//fade in roles
+			roles.fadeTo(teamInfoFadeTime,1, function(){
+				//fade in text
+				text.fadeTo(teamInfoFadeTime,1);
+			});
+		});
+	});
+	
 }
 
 function scrollTeam(direction){

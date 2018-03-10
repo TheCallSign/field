@@ -25,6 +25,7 @@ $( document ).ready(function() {
 
     //display starting portfolio piece
     lastPortfolioItem.fadeTo(portfolioFadeTime, 1);
+    //display starting key background
 
     $('#keys li').hover(function(){
         index = $(this).index();
