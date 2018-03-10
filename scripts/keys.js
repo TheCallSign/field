@@ -32,19 +32,21 @@ $( document ).ready(function() {
         key = keys.eq(index);
         //fade out last background
         if(lastIndex != index){ //make sure the last selection isnt the current selection
+            //fade out last selected key background
             keyBackgrounds.eq(lastIndex).fadeTo(keyFadeTime,0);
-            //show selected background
+            //show selected key background
             background = keyBackgrounds.eq(index);
             background.fadeTo(keyFadeTime,1);
 
-            //change video
-            portfolioItem = $('.portfolio-item').eq(index);
-            lastPortfolioItem.css('z-index',-1);
-            portfolioItem.css('z-index',1);
-            portfolioItem.fadeTo(portfolioFadeTime, 1);
-            lastPortfolioItem.fadeTo(portfolioFadeTime, 0);
-            lastPortfolioItem = portfolioItem;
-        
+            if(!playingVideo){ //dont update portfolio item if video is playing
+                //change video
+                portfolioItem = $('.portfolio-item').eq(index);
+                lastPortfolioItem.css('z-index',-1);
+                portfolioItem.css('z-index',1);
+                portfolioItem.fadeTo(portfolioFadeTime, 1);
+                lastPortfolioItem.fadeTo(portfolioFadeTime, 0);
+                lastPortfolioItem = portfolioItem;
+            }
             //update last background
             lastIndex = index;
         }
