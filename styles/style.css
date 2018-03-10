@@ -90,10 +90,6 @@ h2 {
     background-repeat: no-repeat;
 }
 
- .portfolio-item:first-child{
-    display: block;
-} 
-
 .portfolio-item img {
     width: 100%;
     height: 100%;

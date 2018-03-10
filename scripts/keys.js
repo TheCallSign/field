@@ -2,7 +2,7 @@ var muted = false;
 toggleMute(); //set mute on by default
 var mouseX;
 var mouseY;
-var startingPortfolio = 6;
+var startingPortfolio = 0;
 $( document ).ready(function() {
     var audioCtx = new (window.AudioContext || window.webkitAudioContext)();
     var lastPortfolioItem = $('.portfolio-item').eq(startingPortfolio);//document.getElementsByClassName('portfolio-item')[0];
@@ -24,7 +24,7 @@ $( document ).ready(function() {
     var playingVideo = false;
 
     //display starting portfolio piece
-
+    lastPortfolioItem.fadeTo(portfolioFadeTime, 1);
 
     $('#keys li').hover(function(){
         index = $(this).index();
