@@ -92,9 +92,6 @@ $( document ).ready(function() {
     });
 
     $('#keys li,#video').click(function(){
-        // if(lastIndex != index){
-        //     playingVideo = true;
-        // }
             playVideo(index);
     });
 
@@ -106,12 +103,22 @@ $( document ).ready(function() {
     function playVideo(videoIndex){
         var portfolioItem = $('.portfolio-item')[videoIndex];
         var video = $(portfolioItem).children('video');
-        $(portfolioItem).children('img').fadeTo(portfolioFadeTime,0);//css('display','none');
-        $(video).fadeTo(portfolioFadeTime,1);//css('display','inline-block');
+        var videoInfo = $(portfolioItem).children('img')[1];
+        //bring vidInfo to the stop
+        $(videoInfo).css('z-index',2);
+        //fade out thumbnail and video info
+        $(portfolioItem).children('img').fadeTo(portfolioFadeTime,0);
+        //fade in video
+        $(video).fadeTo(portfolioFadeTime,1);
         if(!playingVideo){
             $(video)[0].play();
+            //fade out video info   
+            $(videoInfo).fadeTo(portfolioFadeTime,0);
         } else {
-            $(video)[0].pause();            
+            $(video)[0].pause();         
+            //fade in video info   
+            $(videoInfo).fadeTo(portfolioFadeTime,1);
+            
         }
         playingVideo = !playingVideo;
         
