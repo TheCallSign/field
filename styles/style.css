@@ -11,7 +11,7 @@ body {
     padding: 0;
     margin: 0;
     background: #efefef;
-    cursor: url('../media/images/Cursor(T1).png'), auto;
+    /*cursor: url('../media/images/Cursor(T1).png'), auto;*/
     overflow: auto;
     font-family: MalterSans;
     font-size: 21pt;
@@ -129,18 +129,9 @@ video {
 
 .team-member {
     display: none;
-    /*opacity: 0;*/
-
-    /*max-width: 70%;*/
     width:100%;
-    /* position: relative; */
-    /* right: -20%; */
     margin: 2% 0%;
 }
-
-/*.team-member:nth-child(1){
-
-}*/
 
 .mugshot {
     width: 40%;
