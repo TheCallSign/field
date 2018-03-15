@@ -163,7 +163,7 @@ video {
 .team-member li:hover:before {
     content: "~";
     animation-name: fadeIn;
-    animation-duration: 0.3s;
+    animation-duration: 0.5s;
 }
 
 @keyframes fadeIn {

@@ -18,7 +18,7 @@ $( document ).ready(function() {
     var key;
     var background;
     var lastIndex = index;
-    var keySoundLoop;
+    var scrollCheck;
     var scroll = 0;
     var portfolioFadeTime = 700;
     var playingVideo = false;
@@ -30,6 +30,7 @@ $( document ).ready(function() {
     $('#keys li').hover(function(){
         index = $(this).index();
         key = keys.eq(index);
+        console.log('index: ' + index)
         //fade out last background
         if(lastIndex != index){ //make sure the last selection isnt the current selection
             //fade out last selected key background
@@ -57,11 +58,11 @@ $( document ).ready(function() {
     });
 
 
-    $('#keys').hover(()=>{
+    $('#keys').hover((e)=>{
         onKeys = true;
         var step = 0.2;
 
-        keySoundLoop = setInterval(()=>{
+        scrollCheck = setInterval(()=>{
             var width = $('#keys').width();
             var pos = (mouseX / width) * 100;
             var multiplier = 3;
@@ -79,15 +80,17 @@ $( document ).ready(function() {
                 scroll = 0;
             }
 
+            // add scroll to current scroll of keys
             var $keys = $('#keys');
             var currentScroll = $keys.scrollLeft();
             $keys.scrollLeft(currentScroll+scroll);
+
 
         },10);
 
     }, () => {
         onKeys = false;
-        clearInterval(keySoundLoop);
+        clearInterval(scrollCheck);
         scroll = 0;
     });
 
