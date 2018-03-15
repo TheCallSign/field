@@ -5,7 +5,7 @@ var paused = false;
 var arrowLeft;
 var arrowRight;
 var arrowFadeTime = 200;
-var teamInfoFadeTime = 300;
+var teamInfoFadeTime = 500;
 var cycleTime = 5000;
 	
 $( document ).ready(function() {
@@ -19,7 +19,7 @@ $( document ).ready(function() {
 			if (currentIndex > numTeamMembers - 1){
 				currentIndex = 0;
 			}
-			cycleItems();
+			cycleItems();	
 		}
 	},cycleTime);
 
@@ -42,28 +42,52 @@ $( document ).ready(function() {
 
 function cycleItems(){
 	var item = $('.team-member').eq(currentIndex);
-	teamMembers.hide();
-	item.css('display','inline-block');	
-	//fade out alles
-	var img = item.children('img');
-	var name = item.children('h2');
-	var roles = item.children('ul');
-	var text = item.children('p');
-	img.css('opacity', 0);
-	name.css('opacity', 0);
-	roles.css('opacity', 0);
-	text.css('opacity', 0);
+	// teamMembers.hide();
+	var prevItem = $(teamMembers).eq(currentIndex-1);
+	// $(prevItem).hide();
 
-	//fade in image
-	img.fadeTo(teamInfoFadeTime, 1, function(){
-		//fade in name
-		name.fadeTo(teamInfoFadeTime, 1, function(){
-			//fade in roles
-			roles.fadeTo(teamInfoFadeTime,1, function(){
-				//fade in text
-				text.fadeTo(teamInfoFadeTime,1);
+	var pImg = prevItem.children('img');
+	var pName = prevItem.children('h2');
+	var pRoles = prevItem.children('ul');
+	var pText = prevItem.children('p');
+
+	// fade out previous item
+	pImg.fadeTo(teamInfoFadeTime, 0, function(){
+		pName.fadeTo(teamInfoFadeTime, 0, function(){
+			pRoles.fadeTo(teamInfoFadeTime, 0, function(){
+				pText.fadeTo(teamInfoFadeTime, 0, function(){
+					prevItem.hide();
+					item.css('display','inline-block');	
+					//set opacity of everything to 0
+					//to get ready for progressive fade in 
+					var img = item.children('img');
+					var name = item.children('h2');
+					var roles = item.children('ul');
+					var text = item.children('p');
+
+					img.css('opacity', 0);
+					name.css('opacity', 0);
+					roles.css('opacity', 0);
+					text.css('opacity', 0);
+					
+					//fade in mugshot
+					img.fadeTo(teamInfoFadeTime, 1, function(){
+						//fade in name
+						name.fadeTo(teamInfoFadeTime, 1, function(){
+							//fade in roles
+							roles.fadeTo(teamInfoFadeTime,1, function(){
+								//fade in text
+								text.fadeTo(teamInfoFadeTime,1);
+							});
+						});
+					});
+
+
+				});
 			});
 		});
+
+
 	});
 	
 }
