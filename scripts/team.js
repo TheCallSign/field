@@ -33,6 +33,7 @@ $( document ).ready(function() {
 
 	$('.mouse-trap').hover(function(event){
 		displayArrowControls();
+		console.log('display controls')
 	}, function() {
 		hideArrowControls();
 	});
@@ -107,8 +108,6 @@ function hideArrowControls(){
 }
 
 function displayArrowControls(){
-
-	if (paused){
 		if(currentIndex > 0){ //check left
 			if(currentIndex < numTeamMembers -1 ){ //check right
 				arrowLeft.fadeTo(arrowFadeTime,1);			
@@ -121,10 +120,6 @@ function displayArrowControls(){
 				arrowLeft.fadeTo(arrowFadeTime,0);
 				arrowRight.fadeTo(arrowFadeTime,1);		
 		}
-	} else { //not paused
-		arrowLeft.fadeTo(arrowFadeTime,0);			
-		arrowRight.fadeTo(arrowFadeTime,0);		
-	}
 }
 
 function posTop() {
