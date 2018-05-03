@@ -7,39 +7,49 @@ var arrowRight;
 var arrowFadeTime = 200;
 var teamInfoFadeTime = 500;
 var cycleTime = 5000;
+var onMouseTrap = false;
 	
 $( document ).ready(function() {
 	arrowLeft = $('#arrow-left');
 	arrowRight = $('#arrow-right');
-	
+
 	//swap team members
 	var autoSlide = setInterval(function(){
 		if(!paused){
-			currentIndex += 1;
-			if (currentIndex > numTeamMembers - 1){
-				currentIndex = 0;
-			}
-			cycleItems();	
+			scrollTeam(1);
 		}
 	},cycleTime);
 
-	$('#team').hover(function(event){
+	$('#team').mousemove(function(event){
 		paused = true;
-		// displayArrowControls(); //show arrows			
-	}, function(){
-		paused = false;
-		// displayArrowControls(); //hide arrows
+		var y = event.pageY - $(this).offset().top;
+		var h = $(this).height();
+		var pos = y / h * 100;
+		if(pos >= 50) {
+			 displayArrowControls(); //show arrows		
+			 onMouseTrap = true;	
+		}else {
+			hideArrowControls(); //hide arrows
+			onMouseTrap = false;
+		}
+		console.log('enter');
 	});
 
-	$('.mouse-trap').hover(function(event){
-		displayArrowControls();
-		console.log('display controls')
-	}, function() {
-		hideArrowControls();
+	$('#team').mouseleave(function(event){
+		paused = false;
+		hideArrowControls(); //hide arrows
+		console.log('exit');
+		
 	});
-	
 
 }); //docready
+
+function getMouseYRelativeTo(event, elem){
+	var y = event.pageY - $(elem).offset().top;
+	var h = $(this).height();
+	var pos = y / h * 100;
+	return pos;
+}
 
 function cycleItems(){
 	var item = $('.team-member').eq(currentIndex);
@@ -58,7 +68,12 @@ function cycleItems(){
 			pRoles.fadeTo(teamInfoFadeTime, 0, function(){
 				pText.fadeTo(teamInfoFadeTime, 0, function(){
 					prevItem.hide();
-					item.css('display','inline-block');	
+					prevItem.css('display', 'none');
+
+					//hide all team members (TODO: duplicate team member bug)
+					$('.team-member').hide();
+					//unhide current team member
+					item.show();
 					//set opacity of everything to 0
 					//to get ready for progressive fade in 
 					var img = item.children('img');
@@ -82,32 +97,42 @@ function cycleItems(){
 							});
 						});
 					});
-
-
 				});
 			});
 		});
-
-
-	});
-	
+	});	
+	updateArrowControls();
 }
 
 function scrollTeam(direction){
 	if(currentIndex+direction>=0 && currentIndex+direction <numTeamMembers){
 		currentIndex += direction;
-		displayArrowControls(); //update arrows		
-		cycleItems();
+	} else {
+		currentIndex = 0;
+	}
+	cycleItems();
+	// hideArrowControls();
+	// displayArrowControls(); //update arrows		
+}
+
+function updateArrowControls(){
+	if(onMouseTrap){
+		displayArrowControls();
+	} else {
+		hideArrowControls();
 	}
 }
 
 function hideArrowControls(){
 	arrowLeft.fadeTo(arrowFadeTime, 0);
-	arrowRight.fadeTo(arrowFadeTime, 0);
+	arrowRight.fadeTo(arrowFadeTime, 0);	
+	console.log('hiding arrow controls');
 	
 }
 
 function displayArrowControls(){
+	console.log('showing arrow controls');
+	
 		if(currentIndex > 0){ //check left
 			if(currentIndex < numTeamMembers -1 ){ //check right
 				arrowLeft.fadeTo(arrowFadeTime,1);			
@@ -120,8 +145,6 @@ function displayArrowControls(){
 				arrowLeft.fadeTo(arrowFadeTime,0);
 				arrowRight.fadeTo(arrowFadeTime,1);		
 		}
+		console.log('arrows displayed');
 }
 
-function posTop() {
-	return typeof window.pageYOffset != 'undefined' ? window.pageYOffset: document.documentElement.scrollTop? document.documentElement.scrollTop: document.body.scrollTop? document.body.scrollTop:0;
-}
