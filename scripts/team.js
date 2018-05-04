@@ -4,7 +4,7 @@ var numTeamMembers = teamMembers.length;
 var paused = false;
 var arrowLeft;
 var arrowRight;
-var arrowFadeTime = 200;
+var arrowFadeTime = 20;
 var teamInfoFadeTime = 500;
 var cycleTime = 5000;
 var onMouseTrap = false;
@@ -101,7 +101,7 @@ function cycleItems(){
 			});
 		});
 	});	
-	updateArrowControls();
+	// updateArrowControls();
 }
 
 function scrollTeam(direction){
