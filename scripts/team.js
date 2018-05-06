@@ -25,18 +25,25 @@ $( document ).ready(function() {
 
 	$('#team').hover(function(event){
 		paused = true;
-		// displayArrowControls(); //show arrows			
+		displayArrowControls(); //show arrows			
+		console.log("show");
 	}, function(){
 		paused = false;
-		// displayArrowControls(); //hide arrows
+		hideArrowControls(); //hide arrows
+		console.log("hide");
+		
 	});
 
-	$('.mouse-trap').hover(function(event){
-		displayArrowControls();
-		console.log('display controls')
-	}, function() {
-		hideArrowControls();
-	});
+	// $('.mouse-trap').hover(function(event){
+	// 	paused = true;
+	// 	displayArrowControls();
+	// 	console.log('display controls')
+	// }, function() {
+	// 	paused = false;
+	// 	hideArrowControls();
+	// 	console.log('hide controls')
+		
+	// });
 	
 
 }); //docready
@@ -58,7 +65,10 @@ function cycleItems(){
 			pRoles.fadeTo(teamInfoFadeTime, 0, function(){
 				pText.fadeTo(teamInfoFadeTime, 0, function(){
 					prevItem.hide();
+					prevItem.css('display','none');
+
 					item.css('display','inline-block');	
+
 					//set opacity of everything to 0
 					//to get ready for progressive fade in 
 					var img = item.children('img');
@@ -88,13 +98,12 @@ function cycleItems(){
 			});
 		});
 
-
 	});
 	
 }
 
 function scrollTeam(direction){
-	if(currentIndex+direction>=0 && currentIndex+direction <numTeamMembers){
+	if((currentIndex+direction)>=0 && (currentIndex+direction) <numTeamMembers){
 		currentIndex += direction;
 		displayArrowControls(); //update arrows		
 		cycleItems();
@@ -103,8 +112,7 @@ function scrollTeam(direction){
 
 function hideArrowControls(){
 	arrowLeft.fadeTo(arrowFadeTime, 0);
-	arrowRight.fadeTo(arrowFadeTime, 0);
-	
+	arrowRight.fadeTo(arrowFadeTime, 0);	
 }
 
 function displayArrowControls(){
