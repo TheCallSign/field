@@ -1,0 +1,49 @@
+@font-face {
+  font-family: HKGothic;
+  src: url('../media/fonts/HKGothic/WEB/HKGothicNo2-SemiBold.woff2') format('woff2'),
+       url('../media/fonts/HKGothic/WEB/HKGothicNo2-SemiBold.woff') format('woff'),
+       url('../media/fonts/HKGothic/WEB/HKGothicNo2-SemiBold.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+body {
+  overflow: hidden;
+  background: black;
+  font-family: HKGothic;
+  color: white;
+}
+
+#container {
+  width: 85%;
+  margin: 0 auto;
+}
+
+#titles {
+  background: #333;
+  overflow: auto;
+  white-space: nowrap;
+  overflow: hidden;
+  height: 100vh;
+  font-size: 135pt;
+  margin-top: 7%;
+  line-height: 150pt;
+} 
+
+#titles li {
+  display: inline-block;
+  width: 5.2%;
+  padding: 0 5.2%;
+  transform: rotate(90deg);
+  -webkit-transform:rotate(90deg) ;
+  -moz-transform:rotate(90deg) ;
+  -o-transform:rotate(90deg) ; 
+
+}
+
+#titles li a {
+   display: inline-block;
+   color: white;
+   text-decoration: none;
+}
