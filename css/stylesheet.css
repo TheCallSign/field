@@ -19,9 +19,13 @@ body {
 
 #titles {
   height: 100vh;
-  /* background: darkcyan; */
-  /* overflow: hidden; */
-  overflow-x: auto;
+  background: darkorange;
+  overflow: hidden;
+  /* overflow-x: auto; */
+}
+
+#titles ul {
+  display: inline;
 }
 
 #titles li {
