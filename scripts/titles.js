@@ -20,3 +20,6 @@ var $titles = $("#titles"),
       $titles.scrollLeft(posX * wDiff);
     }, 10);
 
+$(".title-item").hover(function(){
+    $(this).css('background','gray');
+});
