@@ -20,6 +20,49 @@ var $titles = $("#titles"),
       $titles.scrollLeft(posX * wDiff);
     }, 10);
 
+
+const animationNames = [];
+animationNames[0] = '';
+animationNames[1] = '';
+animationNames[2] = '';
+animationNames[3] = '';
+animationNames[4] = '';
+animationNames[5] = '';
+animationNames[6] = '';
+animationNames[7] = '';
+animationNames[8] = 'addidas';
+
+const animationData = [];
+const animations = [];
+
+for(i in animationNames){
+  var parent = document.getElementsByClassName('title-item')[i];
+  // var child = document.createElement('DIV');
+  // parent.appendChild(child);
+
+  animationData[i] = {
+    container: document.getElementsByClassName('container')[0],//parent, //get corresponding li
+    renderer: 'svg',
+    loop: false,
+    autoplay: false,
+    path: animationNames[i] + '.json'
+  };
+
+  animations[i] = lottie.loadAnimation(animationData[i]);
+
+}
+
+var anim;
+
 $(".title-item").hover(function(){
-    $(this).css('background','gray');
+    let index = $(this).index();
+    let animData = animationData[index];
+
+    if(animData && animData.path !== '.json'){ //make sure not empty path
+      anim = animations[i];
+      anim.play();
+    }
+
+}, function(){
+  anim.stop();
 });

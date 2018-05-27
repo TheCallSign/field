@@ -38,12 +38,8 @@ body {
 
 #titles svg {
     height: 100%;
-    width: 100%;;
-}
-
-.title-item:hover {
-  transform: translateY(25px);
-  /* background: gray; */
+    width: 100%;
+    /* background: goldenrod; */
 }
 
 .cls-1 {
