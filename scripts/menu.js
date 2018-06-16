@@ -29,15 +29,4 @@ for(var i in menuPaths){
     menuAnimations.push(animation)
   }
 
-
-  // $(".menu-item:nth-child(2)").hover(function(){
-  //   // let index = $(this).index();
-  //   // var animation = menuAnimations[index];
-  //   // animation.stop();
-  //   // animation.play();
-  //   // console.log(index)
-  //   console.log('g')  
-  
-  // });
-
   

@@ -48,16 +48,15 @@
        $svg.removeAttr('width');
        $svg.removeAttr('height');
        $svg.removeAttr('style');
-
-      var x = 1500,
-          y = 20,
-          w = 600,
-          h = 2000;
-
+       
+       var x = 1500,
+       y = 20,
+       w = 600,
+       h = 2000;
+       
        //set preserve aspect ratio
        $svg.attr('preserveAspectRatio','xMinYMin meet')
        $svg.attr('viewBox',`${x} ${y} ${w} ${h}`)
-       $svg.css('z-index','2');
 
        $(".title-item").hover(function(){
         let index = $(this).index();
@@ -88,7 +87,6 @@
       //set preserve aspect ratio
       $svg.attr('preserveAspectRatio','xMinYMin meet')
       $svg.attr('viewBox',`${x} ${y} ${w} ${h}`)
-      $svg.css('z-index','2');
 
       // //check menu item hover
       $('.menu-item svg').children('g').hover(function(){
