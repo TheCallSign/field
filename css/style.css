@@ -19,7 +19,7 @@ body {
 
 #titles {
   height: 100vh;
-  overflow: hidden;
+  /* overflow: hidden; */
   /* overflow-x: auto; */
 }
 
@@ -32,8 +32,8 @@ body {
 #titles li {
     display: inline-block;
     height: 100%;
-    width: 7%;
-    margin: 0 2%;
+    width: 10%;
+    margin: 0 1%;
     /* background: red; */
     position: relative;
     /* z-index: -1; */
