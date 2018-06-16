@@ -40,7 +40,7 @@
   
   //wait for title items svg animations to load
   var checkTitlesExist = setInterval(function() {
-    if ($('.title-item svg').length) {
+    if ($('.title-item svg').length === (repeat * animationData.length)) {
        clearInterval(checkTitlesExist);
 
        //remove width and height
@@ -59,13 +59,19 @@
        $svg.attr('viewBox',`${x} ${y} ${w} ${h}`)
        $svg.css('z-index','2');
 
-      loaded();
+       $(".title-item").hover(function(){
+        let index = $(this).index();
+        let animation = animations[index];
+        animation.stop();
+        animation.play();
+        
+      });
 
     } 
   }, 100);
 
   var checkMenuItemsExist = setInterval(function(){
-    if($('.menu-item svg').length > 0 ){
+    if($('.menu-item svg').length === 5 ){
       clearInterval(checkMenuItemsExist)
 
       //remove width and height
@@ -96,19 +102,3 @@
     }
 
   }, 100);
-
-  function loaded(){
-    let animation;
-    $(".title-item").hover(function(){
-      let index = $(this).index();
-      animation = animations[index];
-      animation.stop();
-      animation.play();
-      
-    }, function(){
-      // animation.stop();
-    });
-
-
-  }
-// });
