@@ -19,8 +19,8 @@ body {
 
 #titles {
   height: 100vh;
-  /* overflow: hidden; */
-  /* overflow-x: auto; */
+  overflow: hidden;
+  /* overflow-y: visible; */
 }
 
 #titles ul {
@@ -31,7 +31,7 @@ body {
 
 #titles li {
     display: inline-block;
-    height: 100%;
+    height: 60%;
     width: 10%;
     margin: 0 1%;
     /* background: red; */
@@ -43,6 +43,11 @@ svg {
     height: 100%;
     width: 100%;
     overflow: visible;
+}
+
+#titles svg {
+  /* background: deepskyblue; */
+  overflow: visible;
 }
 
 .cls-1 {
