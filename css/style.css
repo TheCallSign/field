@@ -45,18 +45,6 @@ svg {
     overflow: visible;
 }
 
-.menu-item {
-  pointer-events: none;
-  position: relative;
-}
-.menu-item svg {
-  pointer-events: none;
-}
-
-.menu-item svg g {
-  pointer-events: auto;
-}
-
 .cls-1 {
   fill: #fff;   
 }
@@ -70,10 +58,22 @@ svg {
   height: 100vh;
   width: 100%;
   position: relative;
+  /* background: gray; */
+  top: 0%;
 }
 
 .menu-item {
   position: absolute;
   display: inline-block;
+  pointer-events: none;
+  /* position: relative; */
+}
+.menu-item svg {
+  pointer-events: none;
+  width: 90%;
+  height: 90%;;
 }
 
+.menu-item svg g {
+  pointer-events: auto;
+}
