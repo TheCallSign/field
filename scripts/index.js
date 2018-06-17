@@ -37,7 +37,7 @@
     }
 
   }
-  
+
   //wait for title items svg animations to load
   var checkTitlesExist = setInterval(function() {
     if ($('.title-item svg').length === (repeat * animationData.length)) {
@@ -61,8 +61,10 @@
        $(".title-item").hover(function(){
         let index = $(this).index();
         let animation = animations[index];
-        animation.stop();
-        animation.play();
+        if(animation.isPaused){
+          animation.stop();
+          animation.play();
+        }
         
       });
 
@@ -94,8 +96,11 @@
         var $parent = $(this).parent(); 
         var index = $('.menu-item svg').index($parent);
         let animation = menuAnimations[index];
-        animation.stop();
-        animation.play();
+        if(animation.isPaused){
+          animation.stop();
+          animation.play();
+        }
+
       });
     }
 

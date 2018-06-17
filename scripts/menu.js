@@ -27,6 +27,7 @@ for(var i in menuPaths){
     
     let animation = lottie.loadAnimation(data);
     menuAnimations.push(animation)
+
   }
 
   
