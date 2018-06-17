@@ -19,7 +19,7 @@ body {
 
 #titles {
   height: 100vh;
-  /* overflow: hidden; */
+  overflow: hidden;
   /* overflow-x: auto; */
 }
 
