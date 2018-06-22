@@ -18,7 +18,7 @@ body {
 }
 
 #titles {
-  height: 100vh;
+  height: 95vh;
   overflow: hidden;
 }
 
@@ -56,13 +56,14 @@ svg {
 #content-wrapper {
   width: 80%;
   margin: 0 auto;
+  padding: 0;
+  position: relative;
 }
 
 #menu {
-  height: 100vh;
+  height: 95vh;
   width: 100%;
-  position: relative;
-  /* background: gray; */
+  position: absolute;
   top: 0%;
 }
 
@@ -70,12 +71,13 @@ svg {
   position: absolute;
   display: inline-block;
   pointer-events: none;
-  /* position: relative; */
+  top: -15%;
 }
+
 .menu-item svg {
   pointer-events: none;
-  width: 90%;
-  height: 90%;;
+  width: 95%;
+  height: 95%;
 }
 
 .menu-item svg g {
