@@ -105,3 +105,7 @@
     }
 
   }, 100);
+
+  $('.mute').click(function(){
+    $('.mute').toggle()
+  });

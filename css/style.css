@@ -20,18 +20,24 @@ body {
 #titles {
   height: 95vh;
   overflow: hidden;
+  /* background: gold; */
+  background: palegreen;
 }
 
 #titles ul {
     height: 100%;
+    width: 100%;
     margin: 0;
     white-space: nowrap;
 }
 
 #titles li {
     display: inline-block;
-    height: 60%;
-    width: 10%;
+    /* height: 60%; */
+    max-height: 60%;
+    /* height: auto; */
+    width: 8%;
+    max-width: 8%;
     margin: 0 1%;
     /* background: red; */
     position: relative;
@@ -65,6 +71,15 @@ svg {
   width: 100%;
   position: absolute;
   top: 0%;
+  background: powderblue;
+}
+
+.mute {
+  width: 10%;
+  height: 10%;
+  position: relative;
+  top: 35%;
+  left: 40%;
 }
 
 .menu-item {
@@ -82,4 +97,29 @@ svg {
 
 .menu-item svg g {
   pointer-events: auto;
+}
+
+#civvies {
+  font-size: 3em;
+  height: 95vh;
+  position: relative;
+  top: 105vh;
+  background: rebeccapurple;
+}
+
+#civvies ul {
+  display: inline-block;
+  height: 60%;
+  background: navy;
+  list-style: none;
+}
+
+#civvies li {
+  height: 100%;
+}
+
+.civvies-descrip {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 24pt;
+  max-width: 60%;
 }

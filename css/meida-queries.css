@@ -1,0 +1,5 @@
+@media only screen and (max-height: 550px) {
+    body {
+        background-color: lightblue;
+    }
+}
