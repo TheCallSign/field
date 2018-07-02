@@ -109,3 +109,55 @@
   $('.mute').click(function(){
     $('.mute').toggle()
   });
+
+//////////////civvies rotation
+var $civvies_items = $('.civvies-item');
+var civvies_index = 0;
+
+var civvies_autoslide = setInterval(function(){
+  civvies_index++;
+  var current = civvies_index % $civvies_items.length;
+  var prevIndex = (civvies_index-1) % $civvies_items.length;
+  var fadeTime = 500;
+  var $currentItem = $civvies_items.eq(current);
+  var $prevItem = $civvies_items.eq(prevIndex);
+  
+  console.log('show: ' + current + ' hide: ' + prevIndex)
+
+  //hide all items
+  $prevItem.fadeTo(fadeTime, 0, function(){
+    $prevItem.hide();
+    $prevItem.css('display','none')
+    
+    //unhide current item
+    $currentItem.show();
+    $currentItem.css('opacity','1');
+    
+    //set opacity of everything to 0
+    //to get ready for progressive fade in 
+    var img = $currentItem.find('img');
+    var h2 = $currentItem.find('h2');
+    var info = $currentItem.find('.left');
+    
+
+    img.css('opacity', 0);
+    h2.css('opacity', 0);
+    info.css('opacity', 0);
+    
+    //fade in info 
+    info.fadeTo(fadeTime, 1,function(){
+      img.fadeTo(fadeTime, 1,function(){ //fade in image
+        h2.fadeTo(fadeTime, 1,function(){ //fade in composer
+      
+        });
+      });
+    });
+    
+  });
+
+  console.log('slide')
+
+}, 3000);
+
+
+

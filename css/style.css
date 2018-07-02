@@ -7,7 +7,12 @@
   font-style: normal;
 }
 
-body {
+* {
+  background: rgba(100,0,0,0.1);
+}
+
+
+html,body {
   /* overflow: hidden; */
   background: black;
   font-family: HKGothic;
@@ -15,13 +20,14 @@ body {
   padding: 0;
   margin: 0;
   border: 0;
+  height: 100%;
 }
 
 #titles {
   height: 95vh;
   overflow: hidden;
   /* background: gold; */
-  background: palegreen;
+  /* background: palegreen; */
 }
 
 #titles ul {
@@ -71,7 +77,7 @@ svg {
   width: 100%;
   position: absolute;
   top: 0%;
-  background: powderblue;
+  /* background: powderblue; */
 }
 
 .mute {
@@ -100,26 +106,124 @@ svg {
 }
 
 #civvies {
-  font-size: 3em;
+  /* font-size: 3em; */
   height: 95vh;
   position: relative;
-  top: 105vh;
+  top: 115vh;
   background: rebeccapurple;
+
+}
+
+.civvies-item {
+  width: 100%;
+  height: 100%;
+  display: none;
+}
+
+.left {
+  /* width: 60%;
+  position: absolute;
+  left: 0; */
+  width: 45%;
+  height: 100%;
+  float: left;
+}
+
+.right {
+  /* width: 40%;
+  position: absolute;
+  right: 0;
+  top: 0;
+  margin-left: 10%; */
+  width: 35%;
+  height: 100%;
+  float: right;
 }
 
 #civvies ul {
+  list-style: none;
   display: inline-block;
-  height: 60%;
+  width: 100%;
+  height: 50%;
+  margin: 0;
+  padding: 0;
+  margin-bottom: 7.5%;
+  margin-top: 1%;
+}
+
+#civvies li {
+  display: inline-block;  
+  width: 100%;
+  font-size: 3vw;
+}
+
+#civvies h1 {
+  margin: 0;
+  padding: 0;
+  font-size: 7vw;
+  width: 100%;
+}
+
+#civvies img {
+  display: inline-block;
+  width: 100%;
+  height: 65%;
+  /* max-height: 40%; */
+}
+
+.credit {
+  font-size: 3em;
+  /* height: 100%; */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* 
+#civvies ul {
+  display: inline-block;
+  height: 50%;
   background: navy;
   list-style: none;
+  margin: 0;
+  position: relative;
+  left: 0;
 }
 
 #civvies li {
   height: 100%;
+  position: relative;
+  left: 0;
+
+}
+
+#civvies h1 {
+  position: relative;
+  right: 0;
+  top: 0;
+  font-size: 3em;
+  background: green;
+}
+
+#civvies img {
+  position: absolute;
+  height: 550px;
+  width: 420px;
+  border-radius: 5px;
+  right: 0;
 }
 
 .civvies-descrip {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 24pt;
-  max-width: 60%;
-}
+  margin-top: 7%;
+  max-width: 80%;
+} */
