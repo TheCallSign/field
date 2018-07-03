@@ -6,11 +6,11 @@
   const animations = [];
 
   //populate animation data
-  const stub = "media/Portfolio-TitleDummy";
+  const stub = "media/portfolio/Portfolio-TitleDummy";
   const numAnims = 9;
 
   for(var i = 1; i <= numAnims; i++){
-    var animationName = stub + " " + i + "(T3).json";
+    var animationName = stub + " " + i + "(T4).json";
     animationData.push(animationName);
   }
 
