@@ -113,6 +113,50 @@
 //////////////civvies rotation
 var $civvies_items = $('.civvies-item');
 var civvies_index = 0;
+var hoverchar = " /";
+var oldHtml = "";
+
+$('#civvies li').hover(function(){
+  oldHtml = $(this).text();
+  $(this).text(hoverchar + oldHtml);
+}, function(){
+  $(this).text(oldHtml);
+})
+
+$('#civvies li').click(function(){
+  var index = $(this).index();
+  console.log('index: ' + index)
+  cycleCivvies(index)
+});
+
+var current_civvies_index = 0;
+var civviesFadeTime = 500;
+function cycleCivvies(index){
+  var $currentItem = $civvies_items.eq(current_civvies_index);
+  //fade out
+  $currentItem.fadeTo(civviesFadeTime, 0, function(){
+    $civvies_items.css('opacity','0')    
+    $civvies_items.css('display','none')
+    //get next item
+    $currentItem = $civvies_items.eq(index % $civvies_items.length);
+    //set visible
+    $currentItem.css('display','inline-block')
+    $currentItem.css('opacity','1')
+    
+    // var $info = $currentItem.find()
+    var $image = $currentItem.find('img');
+    var $credit = $currentItem.find('.credit');
+
+    $image.css('opacity','0');
+    $credit.css('opacity','0');
+    
+    $image.fadeTo(civviesFadeTime,1, function(){
+      $credit.fadeTo(civviesFadeTime,1)
+    })
+    
+  })
+
+}
 
 // var civvies_autoslide = setInterval(function(){
 //   civvies_index++;
