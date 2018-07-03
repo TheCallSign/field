@@ -1,1 +1,65 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1229.91 505.8"><defs><style>.cls-1,.cls-2{font-size:135px;fill:#ececec;font-weight:700;}.cls-1{font-family:HKGothicNo2-SemiBold, HK Gothic No 2;}.cls-2{font-family:HKGothicNo2-Bold, HK Gothic No 2;}</style></defs><title>Asset 7(T1)</title><g id="Layer_2" data-name="Layer 2"><g id="Export"><text class="cls-1" transform="translate(47.8 40.08) rotate(96.35) scale(0.9 1)"> </text><text class="cls-1" transform="translate(44.07 73.95) rotate(94.65) scale(0.9 1)"> </text><text class="cls-1" transform="translate(41.33 107.74) rotate(93.12) scale(0.9 1)">i</text><text class="cls-1" transform="translate(38.95 144.56) rotate(90.88) scale(0.9 1)">n</text><text class="cls-1" transform="matrix(0.02, 0.9, -1, 0.02, 38.08, 227.5)">f</text><text class="cls-1" transform="translate(38.73 272.33) rotate(86.94) scale(0.9 1)">o</text><text class="cls-2" transform="translate(44.3 408.62) rotate(40.67) scale(0.9 1)">@</text><text class="cls-1" transform="matrix(0.9, -0.04, 0.05, 1, 181.34, 465.72)">fi</text><text class="cls-1" transform="translate(257.2 462.24) rotate(-2.17) scale(0.9 1)">e</text><text class="cls-1" transform="translate(334.72 459.35) rotate(-1.87) scale(0.9 1)">l</text><text class="cls-1" transform="translate(369.31 458.17) rotate(-1.57) scale(0.9 1)">d</text><text class="cls-1" transform="translate(450.46 456) rotate(-1.25) scale(0.9 1)">.</text><text class="cls-1" transform="translate(493.96 455) rotate(-0.94) scale(0.9 1)">a</text><text class="cls-1" transform="translate(571.48 453.72) rotate(-0.53) scale(0.9 1)">u</text><text class="cls-1" transform="matrix(0.9, 0, 0, 1, 651.33, 452.97)">d</text><text class="cls-1" transform="matrix(0.9, 0, 0, 1, 732.5, 452.9)">i</text><text class="cls-1" transform="matrix(0.9, 0.01, -0.01, 1, 766.92, 452.97)">o</text></g></g></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1229.91 400">
+    <defs>
+        <style>
+            .cls-1,.cls-2{font-size:135px;fill:#ececec;font-weight:700;}.cls-1{font-family:HKGothicNo2-SemiBold, HK Gothic No 2;}.cls-2{font-family:HKGothicNo2-Bold, HK Gothic No 2;}
+        </style>
+    </defs>
+    <title>
+        Asset 7(T1)
+    </title>
+    <g id="Layer_2" data-name="Layer 2">
+        <g id="Export">
+            <text class="cls-1" transform="translate(47.8 40.08) rotate(96.35) scale(0.9 1)">
+                
+            </text>
+            <text class="cls-1" transform="translate(44.07 73.95) rotate(94.65) scale(0.9 1)">
+                
+            </text>
+            <text class="cls-1" transform="translate(41.33 107.74) rotate(93.12) scale(0.9 1)">
+                i
+            </text>
+            <text class="cls-1" transform="translate(38.95 144.56) rotate(90.88) scale(0.9 1)">
+                n
+            </text>
+            <text class="cls-1" transform="matrix(0.02, 0.9, -1, 0.02, 38.08, 227.5)">
+                f
+            </text>
+            <text class="cls-1" transform="translate(38.73 272.33) rotate(86.94) scale(0.9 1)">
+                o
+            </text>
+            <text class="cls-2" transform="translate(44.3 408.62) rotate(40.67) scale(0.9 1)">
+                @
+            </text>
+            <text class="cls-1" transform="matrix(0.9, -0.04, 0.05, 1, 181.34, 465.72)">
+                fi
+            </text>
+            <text class="cls-1" transform="translate(257.2 462.24) rotate(-2.17) scale(0.9 1)">
+                e
+            </text>
+            <text class="cls-1" transform="translate(334.72 459.35) rotate(-1.87) scale(0.9 1)">
+                l
+            </text>
+            <text class="cls-1" transform="translate(369.31 458.17) rotate(-1.57) scale(0.9 1)">
+                d
+            </text>
+            <text class="cls-1" transform="translate(450.46 456) rotate(-1.25) scale(0.9 1)">
+                .
+            </text>
+            <text class="cls-1" transform="translate(493.96 455) rotate(-0.94) scale(0.9 1)">
+                a
+            </text>
+            <text class="cls-1" transform="translate(571.48 453.72) rotate(-0.53) scale(0.9 1)">
+                u
+            </text>
+            <text class="cls-1" transform="matrix(0.9, 0, 0, 1, 651.33, 452.97)">
+                d
+            </text>
+            <text class="cls-1" transform="matrix(0.9, 0, 0, 1, 732.5, 452.9)">
+                i
+            </text>
+            <text class="cls-1" transform="matrix(0.9, 0.01, -0.01, 1, 766.92, 452.97)">
+                o
+            </text>
+        </g>
+    </g>
+</svg>

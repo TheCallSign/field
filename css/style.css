@@ -7,9 +7,9 @@
   font-style: normal;
 }
 
-* {
+/* * {
   background: rgba(100,0,0,0.1);
-}
+} */
 
 
 html,body {
@@ -22,6 +22,11 @@ html,body {
   border: 0;
   height: 100%;
   cursor: url('../media/cursor-left.svg');
+  /* overflow-x: hidden; */
+}
+
+body {
+  overflow-x: hidden;
 }
 
 #titles {
@@ -111,9 +116,7 @@ svg {
   /* font-size: 3em; */
   height: 95vh;
   position: relative;
-  top: 115vh;
-  background: rebeccapurple;
-
+  top: 130vh;
 }
 
 .civvies-item {
@@ -182,7 +185,7 @@ svg {
   height: 95vh;
   width: 100%;
   position: relative;
-  top: 120vh;
+  top: 135vh;
 }
 
 .team-member {
@@ -221,4 +224,90 @@ svg {
   left: 25%;
   max-width: 30%;
   text-align: right;
+  font-family: Arial, Helvetica, sans-serif;
 }
+
+#info {
+  width: 100%;
+  height: 95vh;
+  position: relative;
+  top: 60vh;
+}
+
+
+#info img {
+  width: 33%;
+  height: 45%;
+  position: relative;
+  top: -15%;
+  float: left;
+}
+
+#info svg {
+  width: 70%;
+}
+
+.info-right {
+  width: 100%;
+  height: 45%;
+  position: relative;
+  top: -19%;
+}
+
+.info-right ul {
+  position: relative;
+  left: 3%;
+  list-style: none;
+  font-size: 2vw;
+}
+
+.info-right p {
+  position: relative;
+  left: 3%;
+  font-family: Arial, Helvetica, sans-serif;
+  max-width: 30%;
+  height: auto;
+  display: inline-block;
+}
+
+.address {
+  clear: both;
+  position: relative;
+  top: -12%;
+  line-height: 1vh;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#back-to-top {
+  width: 100%;
+  height: 30%;
+  position: absolute;
+  top: 470%;
+  /* position: absolute;
+  right: -20vw;
+  top: 480vh; */
+  /* overflow: hidden; */
+  overflow: hidden;
+}
+
+#back-to-top img {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  left: 50%;
+  top: 50%;
+  animation: backtotop;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+@keyframes backtotop{
+  0% {transform: rotate(0deg);}
+  100% {transform: rotate(360deg);}
+}
+
+
+
+
+
