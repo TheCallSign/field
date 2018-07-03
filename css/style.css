@@ -21,6 +21,7 @@ html,body {
   margin: 0;
   border: 0;
   height: 100%;
+  cursor: url('../media/cursor-left.svg');
 }
 
 #titles {
@@ -70,6 +71,7 @@ svg {
   margin: 0 auto;
   padding: 0;
   position: relative;
+  /* overflow-x: hidden; */
 }
 
 #menu {
@@ -176,54 +178,47 @@ svg {
   /* height: 100%; */
 }
 
-
-
-
-
-
-
-
-
-
-
-
-/* 
-#civvies ul {
-  display: inline-block;
-  height: 50%;
-  background: navy;
-  list-style: none;
-  margin: 0;
+#team {
+  height: 95vh;
+  width: 100%;
   position: relative;
-  left: 0;
+  top: 120vh;
 }
 
-#civvies li {
-  height: 100%;
-  position: relative;
-  left: 0;
-
+.team-member {
+  display: none;
 }
 
-#civvies h1 {
-  position: relative;
-  right: 0;
-  top: 0;
-  font-size: 3em;
-  background: green;
+.name {
+  width: 50%;
+  /* position: relative; */
+  /* right: 0; */
+  float: right;
 }
 
-#civvies img {
+.mugshot {
   position: absolute;
-  height: 550px;
-  width: 420px;
-  border-radius: 5px;
-  right: 0;
+  width: 32%;
+  height: 62%;
+  right: 8%;
+  top: 15%;
 }
 
-.civvies-descrip {
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 24pt;
-  margin-top: 7%;
-  max-width: 80%;
-} */
+#team ul {
+  list-style: none;
+  display: block;
+  position: absolute;
+  left: 30%;
+  top: 12%;
+  /* height: 30%; */
+  font-size: 3vw;
+  text-align: right;
+}
+
+#team p {
+  position: absolute;  
+  top: 45%;
+  left: 25%;
+  max-width: 30%;
+  text-align: right;
+}

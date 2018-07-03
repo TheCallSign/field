@@ -155,9 +155,85 @@ var civvies_autoslide = setInterval(function(){
     
   });
 
-  console.log('slide')
 
 }, 3000);
+
+////////////////////////team
+var $team = $('#team');
+
+$team.mousemove(function(e){
+  var x = e.pageX;
+  var w = $team.width();
+  var p = x / w * 100;
+  var cursor = 'url(../media/Team - Assets/Team/Team-CursorLeft(T1).svg)';
+
+  if(p > 50){
+    cursor = 'url(../media/Team - Assets/Team/Team-CursorRight(T1).svg)';
+  }
+
+  $('html').css('cursor',cursor)
+  // console.log(cursor)
+});
+
+
+$team.click(function(e){
+  var x = e.pageX;
+  var w = $team.width();
+  var p = x / w * 100;
+  var direction = 0;  
+  if(p > 50){
+    console.log('right')
+    direction = 1;    
+  } else {
+    console.log('left')
+    direction = -1;
+  }
+
+  cycleTeam(direction);
+
+});
+
+var current_team_index = 0;
+var $team_members = $('.team-member');
+var teamFadeTime = 500;
+
+function cycleTeam(direction){
+  //fade out current
+  var $current = $team_members.eq(current_team_index);
+  $current.fadeTo(teamFadeTime, 0, function(){
+    $(this).css('display', 'none');
+    //fade in next
+    current_team_index += direction;
+    current_team_index = current_team_index % $team_members.length;
+    $current = $team_members.eq(current_team_index);
+
+    //set visible
+    $current.css('display','block');
+    $current.css('opacity','1');
+    
+
+    var $name = $current.find('img');
+    var $role = $current.find('ul');
+    var $bio = $current.find('p');
+    
+    //hide everything before fade
+    $name.css('opacity',0);
+    $role.css('opacity',0);
+    $bio.css('opacity',0);
+    
+
+    //fade in name
+    $name.fadeTo(teamFadeTime,1, function(){
+      $role.fadeTo(teamFadeTime,1,function(){
+        $bio.fadeTo(teamFadeTime,1)
+      })
+    })
+  });
+  
+
+}
+
+
 
 
 
