@@ -14,9 +14,10 @@ $menu = $('#menu')
 for(var i in menuPaths){
     var child = document.createElement('DIV');
     child.className = 'menu-item'
+    child.id = names[i]
     document.getElementById('menu').appendChild(child);
     var animDate = lottie
-
+    //child.onclick = function () {alert('what' + i)};
     var data = {
       container: child, //get corresponding div
       renderer: 'svg',
@@ -27,6 +28,7 @@ for(var i in menuPaths){
     
     let animation = lottie.loadAnimation(data);
     menuAnimations.push(animation)
+    //console.log(JSON.stringify(animation, null, 2));
 
   }
 

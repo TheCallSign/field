@@ -89,19 +89,28 @@
       //set preserve aspect ratio
       $svg.attr('preserveAspectRatio','xMinYMin meet')
       $svg.attr('viewBox',`${x} ${y} ${w} ${h}`)
+      $('.menu-item svg').children('g').click(function (e) {
+        let name = e.currentTarget.parentElement.parentElement.id.toLowerCase()
+          if(name === 'ourteam') name = 'team'
 
+        document.location.hash = name
+        console.log(name)
+      })
       // //check menu item hover
       $('.menu-item svg').children('g').hover(function(){
         //get index of animation
         var $parent = $(this).parent(); 
         var index = $('.menu-item svg').index($parent);
         let animation = menuAnimations[index];
+          //alert($('.menu-item svg').children('g').parent().parent().attr('id'))
         if(animation.isPaused){
           animation.stop();
           animation.play();
         }
 
       });
+
+
     }
 
   }, 100);
