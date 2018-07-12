@@ -1,171 +1,174 @@
 "use strict";
 
-// $(document).ready(function(){
-  
-  const animationData = [];
-  const animations = [];
+ $(document).ready(function() {
 
-  //populate animation data
-  const stub = "media/portfolio/Portfolio-TitleDummy";
-  const numAnims = 9;
+     const animationData = [];
+     const animations = [];
 
-  for(var i = 1; i <= numAnims; i++){
-    var animationName = stub + " " + i + "(T4).json";
-    animationData.push(animationName);
-  }
+     //populate animation data
+     const stub = "media/portfolio/Portfolio-TitleDummy";
+     const numAnims = 9;
 
-  //repeat to test scroll
-  var repeat = 2;
-  for(var j = 1; j <= repeat; j++){
+     for (var i = 1; i <= numAnims; i++) {
+         var animationName = stub + " " + i + "(T4).json";
+         animationData.push(animationName);
+     }
+  $('#Export').children().click(function() {
+      window.location.href = "mailto:info@field.audio";
+  })
+     //repeat to test scroll
+     var repeat = 2;
+     for (var j = 1; j <= repeat; j++) {
 
-    //populate animations
-    for(var i in animationData){
-      var child = document.createElement('LI');
-      child.className = 'title-item'
-      document.getElementById('title-list').appendChild(child);
-      
-      var data = {
-        container: child, //get corresponding li
-        renderer: 'svg',
-        loop: false,
-        autoplay: false,
-        path: animationData[i]
-      }
-      
-      let animation = lottie.loadAnimation(data);
-      animations.push(animation)
-    }
+         //populate animations
+         for (var i in animationData) {
+             var child = document.createElement('LI');
+             child.className = 'title-item'
+             document.getElementById('title-list').appendChild(child);
 
-  }
+             var data = {
+                 container: child, //get corresponding li
+                 renderer: 'svg',
+                 loop: false,
+                 autoplay: false,
+                 path: animationData[i]
+             }
 
-  //wait for title items svg animations to load
-  var checkTitlesExist = setInterval(function() {
-    if ($('.title-item svg').length === (repeat * animationData.length)) {
-       clearInterval(checkTitlesExist);
+             let animation = lottie.loadAnimation(data);
+             animations.push(animation)
+         }
 
-       //remove width and height
-       let $svg = $('.title-item svg')
-       $svg.removeAttr('width');
-       $svg.removeAttr('height');
-       $svg.removeAttr('style');
-       
-       var x = 1500,
-       y = 20,
-       w = 600,
-       h = 2000;
-       
-       //set preserve aspect ratio
-       $svg.attr('preserveAspectRatio','xMinYMin meet')
-       $svg.attr('viewBox',`${x} ${y} ${w} ${h}`)
+     }
 
-       $(".title-item").hover(function(){
-        let index = $(this).index();
-        let animation = animations[index];
-        if(animation.isPaused){
-          animation.stop();
-          animation.play();
-        }
-        
-      });
+     //wait for title items svg animations to load
+     var checkTitlesExist = setInterval(function () {
+         if ($('.title-item svg').length === (repeat * animationData.length)) {
+             clearInterval(checkTitlesExist);
 
-    } 
-  }, 100);
+             //remove width and height
+             let $svg = $('.title-item svg')
+             $svg.removeAttr('width');
+             $svg.removeAttr('height');
+             $svg.removeAttr('style');
 
-  var checkMenuItemsExist = setInterval(function(){
-    if($('.menu-item svg').length === 5 ){
-      clearInterval(checkMenuItemsExist)
+             var x = 1500,
+                 y = 20,
+                 w = 600,
+                 h = 2000;
 
-      //remove width and height
-      let $svg = $('.menu-item svg')
-      $svg.removeAttr('width');
-      $svg.removeAttr('height');
-      $svg.removeAttr('style');
+             //set preserve aspect ratio
+             $svg.attr('preserveAspectRatio', 'xMinYMin meet')
+             $svg.attr('viewBox', `${x} ${y} ${w} ${h}`)
 
-      var x = 0,
-          y = 0,
-          w = 3500,
-          h = w;
+             $(".title-item").hover(function () {
+                 let index = $(this).index();
+                 let animation = animations[index];
+                 if (animation.isPaused) {
+                     animation.stop();
+                     animation.play();
+                 }
 
-      //set preserve aspect ratio
-      $svg.attr('preserveAspectRatio','xMinYMin meet')
-      $svg.attr('viewBox',`${x} ${y} ${w} ${h}`)
-      $('.menu-item svg').children('g').click(function (e) {
-        let name = e.currentTarget.parentElement.parentElement.id.toLowerCase()
-          if(name === 'ourteam') name = 'team'
+             });
 
-        document.location.hash = name
-        console.log(name)
-      })
-      // //check menu item hover
-      $('.menu-item svg').children('g').hover(function(){
-        //get index of animation
-        var $parent = $(this).parent(); 
-        var index = $('.menu-item svg').index($parent);
-        let animation = menuAnimations[index];
-          //alert($('.menu-item svg').children('g').parent().parent().attr('id'))
-        if(animation.isPaused){
-          animation.stop();
-          animation.play();
-        }
+         }
+     }, 100);
 
-      });
+     var checkMenuItemsExist = setInterval(function () {
+         if ($('.menu-item svg').length === 5) {
+             clearInterval(checkMenuItemsExist)
+
+             //remove width and height
+             let $svg = $('.menu-item svg')
+             $svg.removeAttr('width');
+             $svg.removeAttr('height');
+             $svg.removeAttr('style');
+
+             var x = 0,
+                 y = 0,
+                 w = 3500,
+                 h = w;
+
+             //set preserve aspect ratio
+             $svg.attr('preserveAspectRatio', 'xMinYMin meet')
+             $svg.attr('viewBox', `${x} ${y} ${w} ${h}`)
+             $('.menu-item svg').children('g').click(function (e) {
+                 let name = e.currentTarget.parentElement.parentElement.id.toLowerCase()
+                 if (name === 'ourteam') name = 'team'
+
+                 document.location.hash = name
+                 console.log(name)
+             })
+             // //check menu item hover
+             $('.menu-item svg').children('g').hover(function () {
+                 //get index of animation
+                 var $parent = $(this).parent();
+                 var index = $('.menu-item svg').index($parent);
+                 let animation = menuAnimations[index];
+                 //alert($('.menu-item svg').children('g').parent().parent().attr('id'))
+                 if (animation.isPaused) {
+                     animation.stop();
+                     animation.play();
+                 }
+
+             });
 
 
-    }
+         }
 
-  }, 100);
+     }, 100);
 
-  $('.mute').click(function(){
-    $('.mute').toggle()
-  });
+     $('.mute').click(function () {
+         $('.mute').toggle()
+     });
 
 //////////////civvies rotation
-var $civvies_items = $('.civvies-item');
-var civvies_index = 0;
-var hoverchar = " /";
-var oldHtml = "";
+     var $civvies_items = $('.civvies-item');
+     var civvies_index = 0;
+     var hoverchar = " /";
+     var oldHtml = "";
 
-$('#civvies li').hover(function(){
-  oldHtml = $(this).text();
-  $(this).text(hoverchar + oldHtml);
-}, function(){
-  $(this).text(oldHtml);
-})
+     $('#civvies li').hover(function () {
+         oldHtml = $(this).text();
+         $(this).text(hoverchar + oldHtml);
+     }, function () {
+         $(this).text(oldHtml);
+     })
 
-$('#civvies li').click(function(){
-  var index = $(this).index();
-  console.log('index: ' + index)
-  cycleCivvies(index)
-});
+     $('#civvies li').click(function () {
+         var index = $(this).index();
+         console.log('index: ' + index)
+         cycleCivvies(index)
+     });
 
-var current_civvies_index = 0;
-var civviesFadeTime = 500;
-function cycleCivvies(index){
-  var $currentItem = $civvies_items.eq(current_civvies_index);
-  //fade out
-  $currentItem.fadeTo(civviesFadeTime, 0, function(){
-    $civvies_items.css('opacity','0')    
-    $civvies_items.css('display','none')
-    //get next item
-    $currentItem = $civvies_items.eq(index % $civvies_items.length);
-    //set visible
-    $currentItem.css('display','inline-block')
-    $currentItem.css('opacity','1')
-    
-    // var $info = $currentItem.find()
-    var $image = $currentItem.find('img');
-    var $credit = $currentItem.find('.credit');
+     var current_civvies_index = 0;
+     var civviesFadeTime = 500;
 
-    $image.css('opacity','0');
-    $credit.css('opacity','0');
-    
-    $image.fadeTo(civviesFadeTime,1, function(){
-      $credit.fadeTo(civviesFadeTime,1)
-    })
-    
-  })
+     function cycleCivvies(index) {
+         var $currentItem = $civvies_items.eq(current_civvies_index);
+         //fade out
+         $currentItem.fadeTo(civviesFadeTime, 0, function () {
+             $civvies_items.css('opacity', '0')
+             $civvies_items.css('display', 'none')
+             //get next item
+             $currentItem = $civvies_items.eq(index % $civvies_items.length);
+             //set visible
+             $currentItem.css('display', 'inline-block')
+             $currentItem.css('opacity', '1')
 
-}
+             // var $info = $currentItem.find()
+             var $image = $currentItem.find('img');
+             var $credit = $currentItem.find('.credit');
+
+             $image.css('opacity', '0');
+             $credit.css('opacity', '0');
+
+             $image.fadeTo(civviesFadeTime, 1, function () {
+                 $credit.fadeTo(civviesFadeTime, 1)
+             })
+
+         })
+
+     }
 
 // var civvies_autoslide = setInterval(function(){
 //   civvies_index++;
@@ -174,118 +177,118 @@ function cycleCivvies(index){
 //   var fadeTime = 500;
 //   var $currentItem = $civvies_items.eq(current);
 //   var $prevItem = $civvies_items.eq(prevIndex);
-  
+
 //   console.log('show: ' + current + ' hide: ' + prevIndex)
 
 //   //hide all items
 //   $prevItem.fadeTo(fadeTime, 0, function(){
 //     $prevItem.hide();
 //     $prevItem.css('display','none')
-    
+
 //     //unhide current item
 //     $currentItem.show();
 //     $currentItem.css('opacity','1');
-    
+
 //     //set opacity of everything to 0
 //     //to get ready for progressive fade in 
 //     var img = $currentItem.find('img');
 //     var h2 = $currentItem.find('h2');
 //     var info = $currentItem.find('.left');
-    
+
 
 //     img.css('opacity', 0);
 //     h2.css('opacity', 0);
 //     info.css('opacity', 0);
-    
+
 //     //fade in info 
 //     info.fadeTo(fadeTime, 1,function(){
 //       img.fadeTo(fadeTime, 1,function(){ //fade in image
 //         h2.fadeTo(fadeTime, 1,function(){ //fade in composer
-      
+
 //         });
 //       });
 //     });
-    
+
 //   });
 
 
 // }, 3000);
 
 ////////////////////////team
-var $team = $('#team');
+     var $team = $('#team');
 
-$team.mousemove(function(e){
-  var x = e.pageX;
-  var w = $team.width();
-  var p = x / w * 100;
-  var cursor = 'url(../media/Team - Assets/Team/Team-CursorLeft(T1).svg)';
+     $team.mousemove(function (e) {
+         var x = e.pageX;
+         var w = $team.width();
+         var p = x / w * 100;
+         var cursor = 'url(../media/Team - Assets/Team/Team-CursorLeft(T1).svg)';
 
-  if(p > 50){
-    cursor = 'url(../media/Team - Assets/Team/Team-CursorRight(T1).svg)';
-  }
+         if (p > 50) {
+             cursor = 'url(../media/Team - Assets/Team/Team-CursorRight(T1).svg)';
+         }
 
-  $('html').css('cursor',cursor)
-  // console.log(cursor)
-});
+         $('html').css('cursor', cursor)
+         // console.log(cursor)
+     });
 
 
-$team.click(function(e){
-  var x = e.pageX;
-  var w = $team.width();
-  var p = x / w * 100;
-  var direction = 0;  
-  if(p > 50){
-    console.log('right')
-    direction = 1;    
-  } else {
-    console.log('left')
-    direction = -1;
-  }
+     $team.click(function (e) {
+         var x = e.pageX;
+         var w = $team.width();
+         var p = x / w * 100;
+         var direction = 0;
+         if (p > 50) {
+             console.log('right')
+             direction = 1;
+         } else {
+             console.log('left')
+             direction = -1;
+         }
 
-  cycleTeam(direction);
+         cycleTeam(direction);
 
-});
+     });
 
-var current_team_index = 0;
-var $team_members = $('.team-member');
-var teamFadeTime = 500;
+     var current_team_index = 0;
+     var $team_members = $('.team-member');
+     var teamFadeTime = 500;
 
-function cycleTeam(direction){
-  //fade out current
-  var $current = $team_members.eq(current_team_index);
-  $current.fadeTo(teamFadeTime, 0, function(){
-    $(this).css('display', 'none');
-    //fade in next
-    current_team_index += direction;
-    current_team_index = current_team_index % $team_members.length;
-    $current = $team_members.eq(current_team_index);
+     function cycleTeam(direction) {
+         //fade out current
+         var $current = $team_members.eq(current_team_index);
+         $current.fadeTo(teamFadeTime, 0, function () {
+             $(this).css('display', 'none');
+             //fade in next
+             current_team_index += direction;
+             current_team_index = current_team_index % $team_members.length;
+             $current = $team_members.eq(current_team_index);
 
-    //set visible
-    $current.css('display','block');
-    $current.css('opacity','1');
-    
+             //set visible
+             $current.css('display', 'block');
+             $current.css('opacity', '1');
 
-    var $name = $current.find('img');
-    var $role = $current.find('ul');
-    var $bio = $current.find('p');
-    
-    //hide everything before fade
-    $name.css('opacity',0);
-    $role.css('opacity',0);
-    $bio.css('opacity',0);
-    
 
-    //fade in name
-    $name.fadeTo(teamFadeTime,1, function(){
-      $role.fadeTo(teamFadeTime,1,function(){
-        $bio.fadeTo(teamFadeTime,1)
-      })
-    })
-  });
-  
+             var $name = $current.find('img');
+             var $role = $current.find('ul');
+             var $bio = $current.find('p');
 
-}
+             //hide everything before fade
+             $name.css('opacity', 0);
+             $role.css('opacity', 0);
+             $bio.css('opacity', 0);
 
+
+             //fade in name
+             $name.fadeTo(teamFadeTime, 1, function () {
+                 $role.fadeTo(teamFadeTime, 1, function () {
+                     $bio.fadeTo(teamFadeTime, 1)
+                 })
+             })
+         });
+
+
+     }
+ })
 
 
 
